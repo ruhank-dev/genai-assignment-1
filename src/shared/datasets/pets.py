@@ -40,9 +40,20 @@ class PetDataset(Dataset):
     def __len__(self) -> int:
         return len(self.paths)
 
+    def _cache(self) -> np.ndarray:
+        """uint8 (N,H,W,3) memmap of RGB-converted, bicubic-resized images (built once, shared by workers)."""
+        f = settings.data_dir / "cache" / f"pets_{self.split}_{self.size}.npy"
+        if not f.exists():
+            f.parent.mkdir(parents=True, exist_ok=True)
+            arr = np.stack([np.asarray(Image.open(p).convert("RGB").resize((self.size, self.size), Image.BICUBIC))
+                            for p in self.paths])
+            np.save(f, arr)
+        return np.load(f, mmap_mode="r")
+
     def load(self, i: int) -> torch.Tensor:
-        img = Image.open(self.paths[i]).convert("RGB").resize((self.size, self.size), Image.BICUBIC)
-        return torch.from_numpy(np.asarray(img, dtype=np.float32) / 255.0).permute(2, 0, 1).contiguous()
+        if not hasattr(self, "_arr"):
+            self._arr = self._cache()
+        return torch.from_numpy(np.array(self._arr[i], dtype=np.float32) / 255.0).permute(2, 0, 1).contiguous()
 
     def __getitem__(self, i: int):
         x = self.load(i)
