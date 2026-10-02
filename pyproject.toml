@@ -1,0 +1,44 @@
+[project]
+name = "genai-assignment"
+version = "0.1.0"
+description = "AI-4009 GenAI Assignment 1: autoencoders, MoE, conditional GAN"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "torch>=2.1.0",
+  "torchvision",
+  "optuna>=3.4.0",
+  "onnx>=1.15.0",
+  "onnxruntime>=1.16.0",
+  "pytorch-msssim",
+  "scikit-learn",
+  "Pillow",
+  "numpy",
+  "matplotlib",
+  "mlflow",
+  "scipy",
+  "onnxscript",
+  "pydantic>=2.5.0",
+  "pydantic-settings",
+  "fastapi>=0.109.0",
+  "uvicorn[standard]",
+  "python-multipart",
+]
+
+[dependency-groups]
+dev = ["pytest", "ruff", "httpx"]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu124" }
+torchvision = { index = "pytorch-cu124" }
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110

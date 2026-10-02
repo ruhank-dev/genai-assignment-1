@@ -1,0 +1,15 @@
+version: "3"
+tasks:
+  setup: { cmds: ["uv sync"] }
+  download-data: { cmds: ["uv run python scripts/download_pets.py", "uv run python scripts/download_fs2k.py", "uv run python scripts/generate_manifests.py"] }
+  train-task1: { cmds: ["uv run python -m src.task1.train"] }
+  optuna-task1: { cmds: ["uv run python -m src.task1.optuna_search"] }
+  train-task2: { cmds: ["uv run python -m src.task2.train_classifier", "uv run python -m src.task2.train_specialists"] }
+  train-task3: { cmds: ["uv run python -m src.task3.train"] }
+  train-task4: { cmds: ["uv run python -m src.task4.train"] }
+  export-onnx: { cmds: ["uv run python -m src.task1.export_onnx", "uv run python -m src.task2.export_onnx", "uv run python -m src.task3.export_onnx", "uv run python -m src.task4.export_onnx"] }
+  mlflow-ui: { cmds: ["uv run mlflow ui --backend-store-uri sqlite:///mlflow.db"] }
+  dev-backend: { cmds: ["uv run uvicorn src.app.backend.main:app --port 8000 --reload"] }
+  dev-frontend: { dir: src/app/frontend, cmds: ["pnpm dev"] }
+  docker-up: { cmds: ["docker compose up --build"] }
+  docker-down: { cmds: ["docker compose down"] }

@@ -1,0 +1,20 @@
+data/
+checkpoints/
+optuna/*.db
+.env
+.env.local
+__pycache__/
+*.pyc
+runs/
+mlruns/
+mlflow.db
+wandb/
+node_modules/
+dist/
+.venv/
+
+# Local-only docs (not published)
+plans/
+audit_and_explanation.md
+src/*/README.md
+src/app/*/README.md
