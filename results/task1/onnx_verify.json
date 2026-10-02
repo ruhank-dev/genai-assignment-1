@@ -1,0 +1,12 @@
+{
+  "path": "C:\\Users\\RUHAN\\Downloads\\gen-ai\\models\\onnx\\task1_universal_ae.onnx",
+  "opset": 17,
+  "size_mb": 2.08,
+  "max_abs_err": {
+    "1": 2.3245811462402344e-06,
+    "4": 8.344650268554688e-06,
+    "8": 1.926720142364502e-05
+  },
+  "pytorch_ms": 14.033,
+  "onnxruntime_ms": 6.421
+}

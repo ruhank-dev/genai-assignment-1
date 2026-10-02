@@ -1,0 +1,15 @@
+{
+  "best_value": 0.32390429452061653,
+  "best_params": {
+    "learning_rate": 0.0018130096324592306,
+    "batch_size": 32,
+    "bottleneck_dim": 64,
+    "encoder_channels": "s",
+    "dropout": 0.36882130217295994,
+    "alpha": 0.5089300991904646
+  },
+  "best_trial": 15,
+  "n_trials": 20,
+  "n_complete": 8,
+  "n_pruned": 12
+}

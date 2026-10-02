@@ -1,0 +1,25 @@
+{
+  "value": 0.32390429452061653,
+  "trial": 15,
+  "params": {
+    "learning_rate": 0.0018130096324592306,
+    "batch_size": 32,
+    "bottleneck_dim": 64,
+    "encoder_channels": "s",
+    "dropout": 0.36882130217295994,
+    "alpha": 0.5089300991904646
+  },
+  "config": {
+    "lr": 0.0018130096324592306,
+    "batch_size": 32,
+    "bottleneck_dim": 64,
+    "channels": [
+      32,
+      64,
+      128
+    ],
+    "dropout": 0.36882130217295994,
+    "alpha": 0.5089300991904646,
+    "weight_decay": 0.0001
+  }
+}

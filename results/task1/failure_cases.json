@@ -1,0 +1,34 @@
+[
+  {
+    "manifest_idx": 24419,
+    "image_idx": 2441,
+    "type": "occlusion",
+    "severity": 3,
+    "psnr": 12.123920440673828,
+    "ssim": 0.5613345503807068
+  },
+  {
+    "manifest_idx": 1633,
+    "image_idx": 163,
+    "type": "salt_pepper",
+    "severity": 3,
+    "psnr": 14.784395217895508,
+    "ssim": 0.5524381399154663
+  },
+  {
+    "manifest_idx": 1636,
+    "image_idx": 163,
+    "type": "blur",
+    "severity": 3,
+    "psnr": 14.366044998168945,
+    "ssim": 0.4287172257900238
+  },
+  {
+    "manifest_idx": 4149,
+    "image_idx": 414,
+    "type": "occlusion",
+    "severity": 3,
+    "psnr": 13.955270767211914,
+    "ssim": 0.3427198827266693
+  }
+]

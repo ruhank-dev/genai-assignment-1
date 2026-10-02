@@ -17,6 +17,8 @@ from src.shared.tracking import ExperimentTracker
 from src.shared.visualization import make_error_heatmap, make_reconstruction_grid, plot_training_curves
 from src.task1.autoencoder import UniversalAutoencoder
 
+# fp16 AMP stalled learning in an A/B test on this GPU (GTX 1660 SUPER, no tensor cores) -> fp32 (see task1 notes)
+USE_AMP = False
 BASELINE = dict(lr=1e-3, batch_size=32, bottleneck_dim=128, channels=[32, 64, 128, 256], dropout=0.0, alpha=0.8,
                 weight_decay=1e-4)
 
@@ -63,12 +65,12 @@ def train_model(cfg: dict, epochs: int, ckpt_dir: Path, ckpt_name: str, experime
     model = UniversalAutoencoder(cfg["channels"], cfg["bottleneck_dim"], cfg["dropout"]).to(dev)
     opt = torch.optim.AdamW(model.parameters(), lr=cfg["lr"], weight_decay=cfg.get("weight_decay", 1e-4))
     sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, epochs)
-    scaler = torch.amp.GradScaler(enabled=dev.type == "cuda")
+    scaler = torch.amp.GradScaler(enabled=USE_AMP and dev.type == "cuda")
     tracker = ExperimentTracker()
     tracker.start_run(run_name, experiment, tags=tags, nested=trial is not None)
     tracker.log_params({**cfg, "epochs": epochs, "types": types or "all", "n_params": model.n_params,
                         "compression_ratio": round(model.compression_ratio(), 2), "seed": settings.seed,
-                        "amp": dev.type == "cuda"})
+                        "amp": USE_AMP})
     ckpt_dir.mkdir(parents=True, exist_ok=True)
     hist, best, bad = {}, float("inf"), 0
     fixed = next(iter(va))  # fixed validation batch for visual progress
@@ -78,7 +80,7 @@ def train_model(cfg: dict, epochs: int, ckpt_dir: Path, ckpt_name: str, experime
             t0, tl = time.time(), 0.0
             for xc, x, _, _ in tr:
                 xc, x = xc.to(dev, non_blocking=True), x.to(dev, non_blocking=True)
-                with torch.autocast(dev.type, enabled=dev.type == "cuda"):
+                with torch.autocast(dev.type, enabled=USE_AMP and dev.type == "cuda"):
                     y = model(xc)
                 loss = rec_loss(x, y.float(), cfg["alpha"])
                 opt.zero_grad(set_to_none=True)
@@ -125,6 +127,7 @@ if __name__ == "__main__":
     ap.add_argument("--mode", choices=["baseline", "final"], default="baseline")
     ap.add_argument("--epochs", type=int, default=30)
     ap.add_argument("--smoke", action="store_true")
+    ap.add_argument("--patience", type=int, default=10)
     a = ap.parse_args()
     out = settings.results_dir / "task1"
     out.mkdir(parents=True, exist_ok=True)
@@ -134,5 +137,5 @@ if __name__ == "__main__":
     else:
         cfg, name, run = BASELINE, "baseline_best.pth", "baseline"
     res = train_model(cfg, 1 if a.smoke else a.epochs, settings.checkpoint_dir / "task1", name,
-                      "genai-task1-universal-ae", run, train_fraction=0.1 if a.smoke else 1.0)
+                      "genai-task1-universal-ae", run, train_fraction=0.1 if a.smoke else 1.0, patience=a.patience)
     (out / f"{run}_history.json").write_text(json.dumps(res))
