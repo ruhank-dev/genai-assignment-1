@@ -6,7 +6,7 @@ export interface PanelItem {
   caption?: string;
 }
 
-/** Side-by-side comparison; click an image to zoom (2x) — models work at 128x128, so pixels are kept crisp. */
+/** Side-by-side comparison; click an image to zoom; 128x128 results are scaled smoothly. */
 export default function ImagePanel({ items }: { items: PanelItem[] }) {
   const [zoom, setZoom] = useState<string | null>(null);
   return (
@@ -19,15 +19,16 @@ export default function ImagePanel({ items }: { items: PanelItem[] }) {
               src={i.src}
               alt={i.label}
               onClick={() => setZoom(i.src)}
-              className="px aspect-square w-full cursor-zoom-in rounded-lg object-contain"
+              className="aspect-square w-full cursor-zoom-in rounded-lg object-contain"
             />
             {i.caption && <p className="mt-2 text-xs text-slate-500">{i.caption}</p>}
           </figure>
         ))}
       </div>
+      <p className="text-center text-xs text-slate-500">Models work on 128×128 images; results are scaled up smoothly for display (click an image to zoom).</p>
       {zoom && (
         <div className="fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/80 p-6" onClick={() => setZoom(null)}>
-          <img src={zoom} alt="zoomed result" className="px max-h-full max-w-full rounded-lg" style={{ width: 512 }} />
+          <img src={zoom} alt="zoomed result" className="max-h-full max-w-full rounded-lg" style={{ width: 512 }} />
         </div>
       )}
     </>
