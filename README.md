@@ -112,5 +112,5 @@ tests/ scripts/  unit & API tests; data download, smoke/UI tests    Dockerfile.*
 * Training budgets were reduced to fit one 6 GB GPU (e.g. 12 Optuna trials per search instead of 30-50); every reduction is documented in the experiment notes.
 * The face-to-sketch outputs are recognisable but softer than the ground-truth sketches (L1-dominated loss, 899 training pairs).
 * The soft MoE cannot reproduce clean images exactly (a Task-2 identity bypass can) and loses to hard routing on low-severity occlusion; see the analysis in the report.
-* The Google Stitch design evidence and the demonstration video required by the assignment are produced outside this repository.
+* The UI was designed in Google Stitch first (export + design tokens in `report/stitch/`, project link in the report); the demonstration video required by the assignment is produced outside this repository.
 * Third-party assets: Oxford-IIIT Pet (CC BY-SA 4.0 images), FS2K (research use).

@@ -34,14 +34,14 @@ export default function SampleCorruptor({ onFile }: { onFile: (f: File) => void 
   };
 
   return (
-    <div className="space-y-3 rounded-xl bg-ink-900 p-4 ring-1 ring-ink-700">
+    <div className="space-y-3 glass p-4">
       <div className="text-sm font-semibold">Corruption studio — make a test input</div>
       <SampleGallery onPick={(f) => setClean(f)} />
       <CorruptionControls kind={kind} severity={severity} onChange={(k, s) => (setKind(k), setSeverity(s))} />
       <button
         disabled={!clean || busy}
         onClick={make}
-        className="rounded-lg bg-amber-500 px-4 py-2 text-sm font-semibold text-ink-950 disabled:opacity-40"
+        className="btn-primary"
       >
         {busy ? "Creating…" : "Apply corruption → use as input"}
       </button>

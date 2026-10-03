@@ -38,7 +38,7 @@ export default function UniversalRestoration() {
     <div className="mx-auto max-w-5xl space-y-6">
       <header>
         <h1 className="text-2xl font-bold">Universal Restoration</h1>
-        <p className="text-sm text-slate-400">One autoencoder restores clean, noisy, blurred and occluded images without being told which.</p>
+        <p className="text-sm text-slate-500">One autoencoder restores clean, noisy, blurred and occluded images without being told which.</p>
       </header>
 
       <div className="flex gap-2">
@@ -46,7 +46,7 @@ export default function UniversalRestoration() {
           <button
             key={m}
             onClick={() => (setMode(m), setFile(null))}
-            className={`rounded-lg px-4 py-2 text-sm ring-1 ${mode === m ? "bg-sky-500/20 ring-sky-400" : "ring-ink-700"}`}
+            className={`rounded-lg px-4 py-2 text-sm ring-1 ${mode === m ? "bg-amber-300/60 ring-amber-400" : "ring-ink-700"}`}
           >
             {m === "studio" ? "Corruption studio (clean sample)" : "Upload a corrupted image"}
           </button>
@@ -59,14 +59,14 @@ export default function UniversalRestoration() {
           <ImageUploader file={file} onFile={setFile} label={mode === "studio" ? "…or upload your own clean image" : "Upload an already corrupted image"} />
         </div>
         {mode === "studio" && (
-          <div className="rounded-xl bg-ink-900 p-4 ring-1 ring-ink-700">
+          <div className="glass p-4">
             <div className="mb-3 text-sm font-semibold">Runtime corruption</div>
             <CorruptionControls kind={kind} severity={severity} onChange={(k, s) => (setKind(k), setSeverity(s))} />
           </div>
         )}
       </section>
 
-      <button disabled={!file || inf.loading} onClick={submit} className="rounded-lg bg-sky-500 px-5 py-2.5 font-semibold text-ink-950 disabled:opacity-40">
+      <button disabled={!file || inf.loading} onClick={submit} className="btn-primary">
         Restore Image
       </button>
 

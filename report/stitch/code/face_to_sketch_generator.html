@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed-dim": "#b9c3ff", "primary-fixed": "#ffddb8", "surface-container-highest": "#d9e3f1", "secondary-container": "#4868f1", "inverse-on-surface": "#e8f2ff", "tertiary-fixed-dim": "#4edea3", "surface-container": "#e4effd", "error": "#ba1a1a", "on-error": "#ffffff", "inverse-primary": "#ffb95f", "outline": "#867461", "on-primary-container": "#613b00", "secondary-fixed": "#dde1ff", "error-container": "#ffdad6", "surface": "#f7f9ff", "outline-variant": "#d8c3ad", "inverse-surface": "#27313c", "on-primary-fixed": "#2a1700", "on-surface-variant": "#534434", "on-tertiary-fixed": "#002113", "on-tertiary": "#ffffff", "surface-variant": "#d9e3f1", "surface-bright": "#f7f9ff", "primary-container": "#f59e0b", "surface-container-low": "#edf4ff", "surface-dim": "#d1dbe8", "primary": "#855300", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "surface-tint": "#855300", "on-secondary-container": "#fffbff", "on-primary": "#ffffff", "on-surface": "#121d26", "on-tertiary-fixed-variant": "#005236", "on-secondary-fixed-variant": "#0034c0", "tertiary": "#006c49", "on-error-container": "#93000a", "surface-container-high": "#dfe9f7", "secondary": "#2a4dd7", "on-tertiary-container": "#004e34", "primary-fixed-dim": "#ffb95f", "background": "#f7f9ff", "on-primary-fixed-variant": "#653e00", "tertiary-fixed": "#6ffbbe", "tertiary-container": "#30c88f", "on-secondary-fixed": "#001257", "on-background": "#121d26" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "margin": "1.5rem", "space-md": "1rem", "space-xl": "2rem", "gutter": "1.25rem", "space-sm": "0.75rem", "space-xs": "0.375rem", "space-lg": "1.5rem" }, "fontFamily": { "body-sm": [ "Inter" ], "headline-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "data-tabular": [ "Inter" ], "label-prominent": [ "Inter" ], "body-lg": [ "Inter" ], "title-card": [ "Plus Jakarta Sans" ], "data-metric": [ "Inter" ], "body-md": [ "Inter" ], "label-caption": [ "Inter" ], "headline-sm": [ "Plus Jakarta Sans" ], "display-hero": [ "Plus Jakarta Sans" ] }, "fontSize": { "body-sm": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "data-tabular": [ "12px", { "lineHeight": "16px", "fontWeight": "600" } ], "label-prominent": [ "13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "title-card": [ "15px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "600" } ], "data-metric": [ "24px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "label-caption": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "headline-sm": [ "18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "display-hero": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" } ] } } } };</script></head><body class="min-h-screen w-full bg-gradient-to-br from-[#ffd8be] via-[#fff4cc] to-[#cfd8ff] relative overflow-x-hidden font-body-md text-on-surface antialiased"><div class="fixed inset-0 pointer-events-none z-0"><div class="absolute -top-32 -left-32 w-96 h-96 bg-[#ffd1b3] rounded-full blur-[100px] opacity-70"></div><div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[#c3ceff] rounded-full blur-[120px] opacity-60"></div><div class="absolute -bottom-32 left-1/3 w-[600px] h-[400px] bg-[#d5f0e3] rounded-full blur-[110px] opacity-60"></div></div><div class="relative z-10 max-w-[1400px] h-[960px] mx-auto my-6 rounded-[40px] bg-surface-container-lowest/25 backdrop-blur-2xl border border-surface-container-lowest/60 shadow-[0_20px_60px_-15px_rgba(31,38,135,0.08),inset_0_1px_2px_rgba(255,255,255,0.9)] p-6 flex flex-col justify-between overflow-hidden"><header class="w-full h-16 flex items-center justify-between shrink-0 mb-4 px-2"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center ring-2 ring-surface-container-lowest/80 shadow-sm"><span class="material-symbols-outlined text-on-primary text-[20px]">person</span></div><div class="flex flex-col"><span class="font-title-card text-title-card text-on-surface leading-none">Welcome, Ruhan!</span><span class="font-label-caption text-label-caption text-on-surface-variant mt-0.5">Enterprise AI Suite</span></div></div><div class="flex-1 max-w-md mx-6"><div class="relative flex items-center w-full h-11 px-4 rounded-full bg-surface-container-lowest/40 backdrop-blur-md border border-surface-container-lowest/70 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8)]"><span class="material-symbols-outlined text-on-surface-variant text-[20px] mr-2">search</span><span class="flex-1 font-body-sm text-body-sm text-on-surface-variant select-none">Search images or models here</span><kbd class="px-2 py-0.5 rounded-full bg-surface-container-lowest/70 border border-surface-container-lowest text-on-surface-variant font-label-caption text-label-caption shadow-sm">⌘K</kbd></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center h-10 px-1.5 py-1 rounded-full bg-surface-container-lowest/50 backdrop-blur-md border border-surface-container-lowest/80"><button class="w-7 h-7 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface shadow-sm" type="button"><span class="material-symbols-outlined text-[16px]">light_mode</span></button><button class="w-7 h-7 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[16px]">dark_mode</span></button></div><button class="relative w-10 h-10 rounded-full bg-surface-container-lowest/50 backdrop-blur-md border border-surface-container-lowest/80 flex items-center justify-center text-on-surface hover:bg-surface-container-lowest/80 transition-all" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></button></div></header><div class="flex-1 flex gap-space-lg overflow-hidden min-h-0 relative"><aside class="w-16 shrink-0 flex flex-col items-center justify-center"><nav class="rounded-full bg-surface-container-lowest/40 backdrop-blur-xl border border-surface-container-lowest/70 p-2 flex flex-col items-center gap-3 shadow-sm" data-active-classes="bg-surface-container-lowest text-primary-container shadow-md scale-105"><a class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest/60 hover:text-on-surface transition-all" data-path="universal-restoration" href="#" title="Universal Restoration"><span class="material-symbols-outlined text-[20px]">auto_fix_high</span></a><a class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest/60 hover:text-on-surface transition-all" data-path="hard-routed-restoration" href="#" title="Hard-Routed Restoration"><span class="material-symbols-outlined text-[20px]">alt_route</span></a><a class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest/60 hover:text-on-surface transition-all" data-path="soft-mixture-of-experts" href="#" title="Soft Mixture-of-Experts"><span class="material-symbols-outlined text-[20px]">layers</span></a><a aria-current="page" class="w-10 h-10 rounded-full flex items-center justify-center transition-all bg-surface-container-lowest text-primary-container shadow-md scale-105" data-path="face-to-sketch" href="#" title="Face-to-Sketch"><span class="material-symbols-outlined text-[20px]">draw</span></a></nav></aside><main class="flex-1 overflow-y-auto pr-1 h-full min-h-0"><div class="flex flex-col w-full gap-space-lg pb-6">
+<!-- Subheader Status Ribbon & Error Warning -->
+<div class="w-full flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container animate-pulse shadow-sm"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Face-to-Sketch Studio</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-highest/60 font-label-caption text-label-caption text-on-surface-variant backdrop-blur-md">v3.4 MoE Engine</span>
+</div>
+<!-- Soft coral warning glass toast -->
+<div class="flex items-center gap-space-sm px-4 py-2 rounded-full bg-error-container/70 backdrop-blur-xl text-on-error-container shadow-sm transition-all hover:bg-error-container/80">
+<span class="material-symbols-outlined text-[18px] text-error">warning</span>
+<span class="font-body-sm text-body-sm font-medium">Extreme backlight detected in active webcam sensor.</span>
+<button class="ml-1 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/80 text-error font-label-caption text-label-caption hover:bg-surface-container-lowest transition-all shadow-sm" type="button">
+        Retry Snapshot
+      </button>
+</div>
+</div>
+<!-- Bento Grid Main Workspace: 12-Column High-Density Grid -->
+<div class="grid grid-cols-12 gap-gutter w-full">
+<!-- Card 1: Input Source Selection & Live Face Landmark Preview (Cols 1-5) -->
+<section class="col-span-12 lg:col-span-5 rounded-lg bg-surface-container-lowest/40 backdrop-blur-2xl p-space-lg flex flex-col justify-between shadow-lg relative overflow-hidden group">
+<!-- Glow ambient backdrop inside card -->
+<div class="absolute -top-20 -right-20 w-52 h-52 bg-secondary-fixed/50 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Card Header: Pill Segmented Tabs -->
+<div class="flex items-center justify-between gap-space-sm relative z-10 mb-space-md">
+<div class="p-1 rounded-full bg-surface-container-lowest/70 backdrop-blur-md flex items-center shadow-sm">
+<button class="px-3.5 py-1.5 rounded-full font-label-prominent text-label-prominent text-on-surface-variant hover:text-on-surface transition-all" id="tab-upload" onclick="switchInputTab('upload')" type="button">
+            Upload photo
+          </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-on-surface font-label-prominent text-label-prominent shadow-sm transition-all" id="tab-webcam" onclick="switchInputTab('webcam')" type="button">
+            Use webcam
+          </button>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-container/20 text-tertiary font-data-tabular text-data-tabular">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-ping"></span>
+          60 FPS LIVE
+        </div>
+</div>
+<!-- Live Simulated Webcam Stream with Face Mesh & Bounding Box -->
+<div class="relative w-full h-[320px] rounded-DEFAULT overflow-hidden bg-inverse-surface/90 shadow-inner flex items-center justify-center">
+<!-- Background Simulated Webcam Feed -->
+<img class="w-full h-full object-cover opacity-85" data-alt="Close-up natural studio camera feed of a radiant young creative professional woman looking straight into the lens, soft ambient warm lighting, subtle depth of field with airy pastel background, high resolution photorealistic portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0evyt7nzOIs6i1Q9BkQ4CpF1ZfVvPln3dBdLORjjPz1xcVyBtsL3iNDqWe66BBgNhxzRdYaCwBk8-ZajagzHf7MdZRI0GTTzouuzbzBwpnk25pmTr7qq-OQgKbyfdZ6U3Td85xXnXT5O0yMikT0oFHvHPfFesetBtzpJk198m_uzDOHJwo9RmSjbrI6OX1LKZKjx8XSstMnGC78wh80_bSWJ8UekilLKIzHIlIn0YKrmAJRyCMRpzwQ"/>
+<!-- Augmented Reality / Facial Landmarks & Bounding Box Overlay (SVG) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" fill="none" viewbox="0 0 400 320">
+<!-- Face Bounding Box with Corner Brackets -->
+<rect class="text-primary-container" height="210" opacity="0.85" rx="20" stroke="currentColor" stroke-dasharray="4 3" stroke-width="1.5" width="180" x="110" y="55"></rect>
+<path class="text-primary-container" d="M100 75 V60 H120" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+<path class="text-primary-container" d="M280 60 H300 V75" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+<path class="text-primary-container" d="M100 245 V260 H120" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+<path class="text-primary-container" d="M280 260 H300 V245" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+<!-- Facial Geometry Wireframe Nodes & Points -->
+<circle class="fill-primary-container" cx="160" cy="130" r="3.5"></circle>
+<circle class="fill-primary-container" cx="240" cy="130" r="3.5"></circle>
+<circle class="fill-secondary-container" cx="200" cy="170" r="3"></circle>
+<circle class="fill-secondary-container" cx="180" cy="210" r="3"></circle>
+<circle class="fill-secondary-container" cx="220" cy="210" r="3"></circle>
+<path class="text-primary-container" d="M150 120 Q160 115 175 120" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+<path class="text-primary-container" d="M225 120 Q240 115 250 120" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+<path class="text-secondary-fixed-dim" d="M165 210 Q200 230 235 210" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+<!-- Mesh Triangulation Wirelines -->
+<path d="M160 130 L200 170 L240 130 Z" stroke="rgba(245, 158, 11, 0.4)" stroke-width="1"></path>
+<path d="M160 130 L180 210 L200 170 L220 210 L240 130" stroke="rgba(72, 104, 241, 0.35)" stroke-width="1"></path>
+</svg>
+<!-- Top Status Pill inside preview -->
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-inverse-surface/60 backdrop-blur-md text-surface flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim">face</span>
+<span class="font-data-tabular text-data-tabular tracking-wide">CONFIDENCE 98.4%</span>
+</div>
+<!-- Shutter Button Floating Controls (Bottom Center) -->
+<div class="absolute bottom-4 inset-x-0 flex items-center justify-center gap-space-md z-20">
+<button class="w-9 h-9 rounded-full bg-surface-container-lowest/50 backdrop-blur-md text-on-surface flex items-center justify-center hover:bg-surface-container-lowest transition-all shadow-sm" title="Flip camera" type="button">
+<span class="material-symbols-outlined text-[18px]">flip_camera_ios</span>
+</button>
+<!-- Master Shutter Snapshot Button -->
+<button class="relative group/btn w-14 h-14 rounded-full bg-surface-container-lowest/80 backdrop-blur-xl flex items-center justify-center text-on-surface hover:scale-105 active:scale-95 transition-all shadow-xl" id="btn-shutter" onclick="triggerSnapshotPulse()" type="button">
+<div class="w-11 h-11 rounded-full bg-gradient-to-br from-primary-container to-inverse-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-on-primary-container text-[22px]">photo_camera</span>
+</div>
+<div class="absolute inset-0 rounded-full scale-100 opacity-0 bg-primary-container transition-all duration-300 pointer-events-none" id="shutter-ripple"></div>
+</button>
+<button class="w-9 h-9 rounded-full bg-surface-container-lowest/50 backdrop-blur-md text-on-surface flex items-center justify-center hover:bg-surface-container-lowest transition-all shadow-sm" title="Settings" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Alternative Dropzone Bar Below Preview -->
+<div class="mt-space-md w-full p-2.5 rounded-full bg-surface-container-lowest/60 backdrop-blur-md flex items-center justify-between shadow-sm cursor-pointer hover:bg-surface-container-lowest transition-all">
+<div class="flex items-center gap-2 pl-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">cloud_upload</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Drop portrait image (JPG, PNG) or tap to browse</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container font-label-caption text-label-caption text-on-surface font-semibold shadow-xs">Browse</span>
+</div>
+</section>
+<!-- Card 2: Artistic Style Preset Selector Card (Cols 6-12) -->
+<section class="col-span-12 lg:col-span-7 rounded-lg bg-surface-container-lowest/40 backdrop-blur-2xl p-space-lg flex flex-col justify-between shadow-lg relative">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Artistic Sketch Styles</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Neural rendering pipeline preset configuration</p>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed/50 text-secondary font-label-caption text-label-caption shadow-sm">
+<span class="material-symbols-outlined text-[16px]">brush</span>
+          Stylus Pressure Ready
+        </div>
+</div>
+<!-- 3 Interactive Style Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm mb-space-md">
+<!-- Style 1: Fine Light Contours -->
+<div class="cursor-pointer rounded-DEFAULT p-3 bg-surface-container-lowest/50 hover:bg-surface-container-lowest/80 transition-all flex flex-col justify-between shadow-sm group" id="style-card-1" onclick="selectStyle(1)">
+<div class="relative w-full h-24 rounded-DEFAULT overflow-hidden mb-2.5 bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-all duration-300" data-alt="Extreme close-up macro texture of fine minimalist architectural pencil contour linework sketch on heavy textured cream art paper, clean graphite lines, pure white and subtle warm graphite shades, elegant negative space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4nQuMYEhTYUR0bhzIomD3PYYP31X2KSdl2iunidRlO_f54bYejHGJyCfEgoLKarRZ_KskzNewxvrKUdPXi9Qz6zxW2-Ga31hJ5h95DTKH0axSSv1axhwz8j7HgXbUYbIjr2RDAgv3Ss3jn3EmLfExdZHDI-6ghC5drJ_Sogv8nsD8QlyogZRspxCSt5wVJTL4OIjXCv3kvJwxSkqDcxGZzbdWP8v5ZZjm5vMis2okJj7Z_sooXVNf0Q"/>
+<span class="absolute top-1.5 right-1.5 px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-caption text-label-caption text-on-surface-variant">0.2mm</span>
+</div>
+<div>
+<span class="font-title-card text-title-card text-on-surface block">Fine Light Contours</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs line-clamp-2 mt-0.5">Clean architectural line-art with gentle graphite edge transitions.</span>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="font-label-caption text-label-caption text-on-surface-variant">Linework</span>
+<div class="w-7 h-4 rounded-full bg-surface-container-highest flex items-center p-0.5">
+<div class="w-3 h-3 rounded-full bg-surface-container-lowest shadow-xs"></div>
+</div>
+</div>
+</div>
+<!-- Style 2: Heavy Hatching & Charcoal (Active / Selected!) -->
+<div class="cursor-pointer rounded-DEFAULT p-3 bg-surface-container-lowest/90 transition-all flex flex-col justify-between shadow-xl relative scale-[1.02] ring-2 ring-primary-container" id="style-card-2" onclick="selectStyle(2)">
+<!-- Amber Glow Effect -->
+<div class="absolute -inset-1 rounded-DEFAULT bg-gradient-to-r from-primary-container via-primary-fixed to-inverse-primary opacity-20 blur-md pointer-events-none"></div>
+<div class="relative w-full h-24 rounded-DEFAULT overflow-hidden mb-2.5 bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="Dense expressive charcoal drawing texture with rich deep cross-hatching marks and smudged graphite tonal gradients, dark chiaroscuro shadows on cold-pressed textured rag paper, handcrafted artistic charcoal art." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALIcDvsjigNCFr-cHrDpo642R84KEfFV1VJqZ3wLO6edqfDeFypRMh5E_cV2Jov5fJI2wuHQXyg_4qUJbiatKXBrYYOmkGjQNuJmTbcMR4bB2nYfVn7QmPO1Y0X9JJpH8IwcvB6vdJSWJ0ngwo2UooQcAgILsXVyrFLfIY0wHYQoUnnjJsTvV5RVP2CGCQ7bUoRpf-OOIZiHNAsSPfAYKp6U7cxKT4XGSV9T_sQrPlgkiwklHvjKXIgw"/>
+<span class="absolute top-1.5 right-1.5 px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-caption text-label-caption font-bold shadow-sm">ACTIVE</span>
+</div>
+<div>
+<div class="flex items-center gap-1">
+<span class="font-title-card text-title-card text-on-surface font-bold">Heavy Hatching</span>
+<span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs line-clamp-2 mt-0.5">Charcoal &amp; cross-hatching with dramatic tonal contrasts.</span>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="font-label-caption text-label-caption text-primary font-semibold">Tonal Depth</span>
+<!-- Active Toggle -->
+<div class="w-8 h-4 rounded-full bg-primary-container flex items-center justify-end p-0.5 shadow-sm">
+<div class="w-3 h-3 rounded-full bg-surface-container-lowest shadow-sm"></div>
+</div>
+</div>
+</div>
+<!-- Style 3: Medium Dynamic Contours -->
+<div class="cursor-pointer rounded-DEFAULT p-3 bg-surface-container-lowest/50 hover:bg-surface-container-lowest/80 transition-all flex flex-col justify-between shadow-sm group" id="style-card-3" onclick="selectStyle(3)">
+<div class="relative w-full h-24 rounded-DEFAULT overflow-hidden mb-2.5 bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-all duration-300" data-alt="Dynamic black Indian ink brush pen sketch strokes on parchment paper, bold manga style hatching and energetic calligraphic contours, expressive hand-drawn graphic novel portrait rendering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1XYW1F9qTTnBnQzYeQC5EDbA-pPQ-h27tJY_clMHnD8IVEACDQIH6pe69U-hN8KI75Md1WioIkssSEy-Yw_NdmUysTf_SOEsHIyqz-BCu45FFSjdiZl800zTXXa217O4Fo2h4RT2r9V4rY_CrnGohoBHKyjmJvl5BelU7k4gjw6YsQqd2PU7kSSB0iT9GQ_myyzUozGtIjhwJdmfyqoMryNOa6kmuXQUG5wYymZazNBi8htZQSllOjg"/>
+<span class="absolute top-1.5 right-1.5 px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-caption text-label-caption text-on-surface-variant">Ink G-Pen</span>
+</div>
+<div>
+<span class="font-title-card text-title-card text-on-surface block">Medium Dynamic</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs line-clamp-2 mt-0.5">Graphic ink pen strokes inspired by manga portraiture.</span>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="font-label-caption text-label-caption text-on-surface-variant">Expressive</span>
+<div class="w-7 h-4 rounded-full bg-surface-container-highest flex items-center p-0.5">
+<div class="w-3 h-3 rounded-full bg-surface-container-lowest shadow-xs"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Precision Controls: Sliders and Toggles -->
+<div class="p-space-sm rounded-DEFAULT bg-surface-container-lowest/55 backdrop-blur-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center justify-between text-body-sm">
+<span class="font-label-prominent text-label-prominent text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">line_weight</span>
+            Stroke Weight Calibration
+          </span>
+<span class="font-data-tabular text-data-tabular text-primary font-bold">1.45 px</span>
+</div>
+<!-- Frosted Track Slider -->
+<div class="relative flex items-center w-full h-5">
+<input class="w-full h-2 bg-surface-container-highest rounded-full appearance-none cursor-pointer accent-primary-container" max="3.0" min="0.2" step="0.05" type="range" value="1.45"/>
+</div>
+<!-- Cross-Hatching Density Pill Switcher -->
+<div class="flex items-center justify-between pt-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cross-Hatching Density</span>
+<div class="flex items-center p-1 rounded-full bg-surface-container-highest/60 backdrop-blur-md gap-1">
+<button class="px-2.5 py-1 rounded-full font-label-caption text-label-caption text-on-surface-variant hover:text-on-surface" type="button">Sparse</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-caption text-label-caption font-semibold shadow-xs" type="button">Adaptive</button>
+<button class="px-2.5 py-1 rounded-full font-label-caption text-label-caption text-on-surface-variant hover:text-on-surface" type="button">Ultra Dense</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Card 3: Portrait Synthesis Comparison Showcase (Cols 1-9) -->
+<section class="col-span-12 lg:col-span-9 rounded-lg bg-surface-container-lowest/40 backdrop-blur-2xl p-space-lg shadow-lg flex flex-col justify-between relative">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">compare</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Synthesis Comparison View</h2>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/70 backdrop-blur-md text-on-surface-variant font-data-tabular text-data-tabular shadow-xs">
+            Diff Scale: 1:1
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-container/20 text-tertiary font-label-caption text-label-caption font-semibold">
+            Color Mapped to Monochrome
+          </span>
+</div>
+</div>
+<!-- Split Screen Comparison Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mb-space-md">
+<!-- Left: Original Face Card -->
+<div class="rounded-DEFAULT bg-surface-container-lowest/60 backdrop-blur-md p-space-sm flex flex-col shadow-sm">
+<div class="flex items-center justify-between pb-2">
+<span class="font-title-card text-title-card text-on-surface">Original Input</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-caption text-label-caption font-semibold">1080p FHD</span>
+</div>
+<div class="relative w-full h-56 rounded-DEFAULT overflow-hidden bg-surface-container-low shadow-inner">
+<img class="w-full h-full object-cover" data-alt="High resolution professional studio photographic portrait of a smiling young person with curly hair, natural glowing skin, clear eye reflections, dressed in casual minimalist attire with warm balanced front key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJTywcKAYjcc7gn4Xd_cdsGWrdwa9x06-GdO_rPd86kb4hW4r_sGDJpk63b6TxaJ0uacSYEW1g3AtT1kf-uIKdbgaXgcQh03Ulalro4jbaqaxVT2J2yRXJ5NRLCR5r-O7ektr4yBnB2X8KgTIqd0kHWAIHyvKWjQMILQkkDGkqjYTH2LuDyC5y-C9l2qeh36GEyVJp8JPvx9W1KdG6fGMFbiBJSgVlgOE8hj7P6LrZCZLYm1_kWuYZNg"/>
+<div class="absolute bottom-2 left-2 px-2.5 py-0.5 rounded-full bg-inverse-surface/60 backdrop-blur-md text-surface font-label-caption text-label-caption">
+              Source: 1920 × 1080
+            </div>
+</div>
+</div>
+<!-- Right: Generated Pencil Sketch Card -->
+<div class="rounded-DEFAULT bg-surface-container-lowest/60 backdrop-blur-md p-space-sm flex flex-col shadow-sm relative group">
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-1.5">
+<span class="font-title-card text-title-card text-on-surface font-bold">Synthesized Sketch</span>
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-caption text-label-caption font-bold shadow-xs">Pencil &amp; Charcoal</span>
+</div>
+<div class="relative w-full h-56 rounded-DEFAULT overflow-hidden bg-surface-container-lowest shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Masterpiece quality fine art pencil sketch of the exact same smiling curly-haired subject, highly detailed cross-hatching, realistic graphite hair volume, subtle charcoal smudge shading, tactile textured drawing paper." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz3OsNO0DqtEE9mH3zjlJDXDbdXFzk08LcC1HewVeZok8wGyuJqTxsi_oO13tYNg-VtnWLuPdA012t29Rgv0erwf5suaNwovQFzse0rWkcPXzlDvkhTwYuRhINb0XNUWzGc3wepFVXrHie4_OGaksSmfJtmNtPbqsz2IeIFtRGJkxnKEY0mzWErDAMRzM_AYwO5W1CO-gcabw5ZOJPHrLiULLYAZOPP5NQ30ALdesC5zbRzxc84BsPEw"/>
+<!-- Quick View Lens Badge -->
+<button class="absolute top-2 right-2 w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface flex items-center justify-center hover:scale-110 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+</button>
+<div class="absolute bottom-2 left-2 px-2.5 py-0.5 rounded-full bg-inverse-surface/70 backdrop-blur-md text-surface font-label-caption text-label-caption">
+              Pass 4/4 Complete
+            </div>
+</div>
+</div>
+</div>
+<!-- Action Button Row -->
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<!-- Warm radiant gradient CTA button -->
+<button class="px-6 py-3 rounded-full bg-gradient-to-r from-primary-container to-inverse-primary text-on-primary-container font-label-prominent text-label-prominent font-bold flex items-center gap-2 shadow-[0_6px_24px_rgba(245,158,11,0.35)] hover:scale-102 hover:shadow-[0_8px_32px_rgba(245,158,11,0.5)] transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">draw</span>
+            Generate Sketch
+          </button>
+<!-- Frosted secondary pill button -->
+<button class="px-5 py-3 rounded-full bg-surface-container-lowest/70 backdrop-blur-md text-on-surface hover:bg-surface-container-lowest font-label-prominent text-label-prominent flex items-center gap-2 shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+            Download PNG
+          </button>
+</div>
+<div class="flex items-center gap-space-xs">
+<!-- Glass icon button: Vector SVG Export -->
+<button class="h-11 px-4 rounded-full bg-surface-container-lowest/60 backdrop-blur-md text-on-surface hover:bg-surface-container-lowest flex items-center gap-2 shadow-sm transition-all" title="Vector SVG Linework Export" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">polyline</span>
+<span class="font-label-prominent text-label-prominent">Export Vector SVG</span>
+</button>
+<button class="w-11 h-11 rounded-full bg-surface-container-lowest/60 backdrop-blur-md text-on-surface hover:bg-surface-container-lowest flex items-center justify-center shadow-sm transition-all" title="Copy to Clipboard" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Card 4: System State & Synthesis Progress Telemetry (Cols 10-12) -->
+<section class="col-span-12 lg:col-span-3 rounded-lg bg-surface-container-lowest/40 backdrop-blur-2xl p-space-lg shadow-lg flex flex-col justify-between relative overflow-hidden">
+<!-- Ambient Glow -->
+<div class="absolute -bottom-16 -left-16 w-40 h-40 bg-secondary-fixed/40 rounded-full blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-title-card text-title-card text-on-surface">Synthesis Queue</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">hourglass_top</span>
+</div>
+<!-- In-progress Loading State Demonstration Module -->
+<div class="p-space-md rounded-DEFAULT bg-surface-container-lowest/70 backdrop-blur-xl shadow-md mb-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-prominent text-label-prominent text-on-surface">Active Shading Task</span>
+<span class="font-data-tabular text-data-tabular text-secondary font-bold">64%</span>
+</div>
+<!-- Circular + Horizontal Progress Combo -->
+<div class="flex items-center gap-space-sm">
+<!-- Mini SVG Progress Spinner -->
+<div class="relative w-8 h-8 shrink-0 flex items-center justify-center">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="64, 100" stroke-linecap="round" stroke-width="4"></path>
+</svg>
+</div>
+<div class="flex-1 flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface truncate">Synthesizing pencil strokes...</span>
+<span class="font-label-caption text-label-caption text-on-surface-variant">Cross-layer hatching pass</span>
+</div>
+</div>
+<!-- Frosted Fluid Progress Bar -->
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary-container to-secondary rounded-full w-[64%] animate-pulse"></div>
+</div>
+</div>
+<!-- Metric Telemetry -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between px-3 py-2 rounded-full bg-surface-container-lowest/50 text-body-sm">
+<span class="font-label-caption text-label-caption text-on-surface-variant">Inference Latency</span>
+<span class="font-data-tabular text-data-tabular text-on-surface font-semibold">182 ms</span>
+</div>
+<div class="flex items-center justify-between px-3 py-2 rounded-full bg-surface-container-lowest/50 text-body-sm">
+<span class="font-label-caption text-label-caption text-on-surface-variant">Stroke Paths</span>
+<span class="font-data-tabular text-data-tabular text-on-surface font-semibold">4,812 vectors</span>
+</div>
+<div class="flex items-center justify-between px-3 py-2 rounded-full bg-surface-container-lowest/50 text-body-sm">
+<span class="font-label-caption text-label-caption text-on-surface-variant">Canvas Paper Texture</span>
+<span class="font-data-tabular text-data-tabular text-primary font-semibold">Cold Press 300g</span>
+</div>
+</div>
+</div>
+<!-- Empty State / Drag Hint Box at Bottom -->
+<div class="mt-space-md p-space-sm rounded-DEFAULT bg-surface-container/60 backdrop-blur-md flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px] shrink-0">image_search</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-xs leading-relaxed">
+          Or drag any JPG/PNG portrait to instantly convert with preset stylus dynamics.
+        </p>
+</div>
+</section>
+</div>
+</div>
+<!-- Client-side Interactive Behaviors -->
+<script>
+  function switchInputTab(tab) {
+    const uploadBtn = document.getElementById('tab-upload');
+    const webcamBtn = document.getElementById('tab-webcam');
+    
+    if (tab === 'webcam') {
+      webcamBtn.className = 'px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-on-surface font-label-prominent text-label-prominent shadow-sm transition-all';
+      uploadBtn.className = 'px-3.5 py-1.5 rounded-full font-label-prominent text-label-prominent text-on-surface-variant hover:text-on-surface transition-all';
+    } else {
+      uploadBtn.className = 'px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-on-surface font-label-prominent text-label-prominent shadow-sm transition-all';
+      webcamBtn.className = 'px-3.5 py-1.5 rounded-full font-label-prominent text-label-prominent text-on-surface-variant hover:text-on-surface transition-all';
+    }
+  }
+
+  function selectStyle(index) {
+    [1, 2, 3].forEach(i => {
+      const card = document.getElementById('style-card-' + i);
+      if (i === index) {
+        card.className = 'cursor-pointer rounded-DEFAULT p-3 bg-surface-container-lowest/90 transition-all flex flex-col justify-between shadow-xl relative scale-[1.02] ring-2 ring-primary-container';
+      } else {
+        card.className = 'cursor-pointer rounded-DEFAULT p-3 bg-surface-container-lowest/50 hover:bg-surface-container-lowest/80 transition-all flex flex-col justify-between shadow-sm group';
+      }
+    });
+  }
+
+  function triggerSnapshotPulse() {
+    const ripple = document.getElementById('shutter-ripple');
+    ripple.classList.remove('opacity-0');
+    ripple.classList.add('opacity-40', 'scale-150');
+    setTimeout(() => {
+      ripple.classList.remove('opacity-40', 'scale-150');
+      ripple.classList.add('opacity-0');
+    }, 350);
+  }
+</script></main></div><footer class="w-full h-14 shrink-0 flex items-center justify-between px-2 pt-2"><nav class="flex items-center gap-1.5 p-1 rounded-full bg-surface-container-lowest/45 backdrop-blur-xl border border-surface-container-lowest/70 shadow-sm" data-active-classes="bg-surface-container-lowest text-on-surface font-title-card shadow-sm"><a class="px-4 py-2 rounded-full font-label-prominent text-label-prominent text-on-surface-variant hover:text-on-surface transition-all" data-path="universal-restoration" href="#">Universal Restoration</a><a class="px-4 py-2 rounded-full font-label-prominent text-label-prominent text-on-surface-variant hover:text-on-surface transition-all" data-path="hard-routed-restoration" href="#">Hard-Routed</a><a class="px-4 py-2 rounded-full font-label-prominent text-label-prominent text-on-surface-variant hover:text-on-surface transition-all" data-path="soft-mixture-of-experts" href="#">Mixture of Experts</a><a aria-current="page" class="px-4 py-2 rounded-full transition-all bg-surface-container-lowest text-on-surface font-title-card shadow-sm" data-path="face-to-sketch" href="#">Face-to-Sketch</a></nav><button class="w-11 h-11 rounded-full bg-surface-container-lowest/60 backdrop-blur-xl border border-surface-container-lowest/80 flex items-center justify-center text-on-surface hover:bg-surface-container-lowest hover:scale-105 transition-all shadow-sm" type="button"><span class="material-symbols-outlined text-[22px]">add</span></button></footer></div></body></html>

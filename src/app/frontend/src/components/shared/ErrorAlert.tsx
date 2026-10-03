@@ -6,7 +6,7 @@ interface Props {
 
 export default function ErrorAlert({ message, onDismiss, onRetry }: Props) {
   return (
-    <div role="alert" className="flex items-start justify-between gap-4 rounded-lg border border-rose-500/50 bg-rose-500/10 px-4 py-3 text-sm text-rose-200">
+    <div role="alert" className="flex items-start justify-between gap-4 rounded-lg border border-rose-300 bg-rose-100/70 px-4 py-3 text-sm text-rose-700">
       <span>{message}</span>
       <span className="flex shrink-0 gap-3">
         {onRetry && (

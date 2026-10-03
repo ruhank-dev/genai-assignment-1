@@ -42,7 +42,7 @@ export default function WebcamCapture({ onCapture }: { onCapture: (f: File) => v
     setShot(null);
   };
 
-  if (error) return <p className="rounded-lg bg-rose-500/10 p-4 text-sm text-rose-200">{error}</p>;
+  if (error) return <p className="rounded-lg bg-rose-100/70 p-4 text-sm text-rose-700">{error}</p>;
   return (
     <div className="space-y-3">
       <div className="relative overflow-hidden rounded-xl bg-black">
@@ -51,7 +51,7 @@ export default function WebcamCapture({ onCapture }: { onCapture: (f: File) => v
       </div>
       <div className="flex gap-2">
         {!shot ? (
-          <button onClick={snap} className="rounded-lg bg-sky-500 px-4 py-2 text-sm font-semibold text-ink-950">
+          <button onClick={snap} className="btn-primary">
             Take snapshot
           </button>
         ) : (
@@ -59,7 +59,7 @@ export default function WebcamCapture({ onCapture }: { onCapture: (f: File) => v
             <button onClick={() => onCapture(new File([shot.blob], "webcam.png", { type: "image/png" }))} className="rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-ink-950">
               Use this photo
             </button>
-            <button onClick={retake} className="rounded-lg px-4 py-2 text-sm ring-1 ring-ink-700">
+            <button onClick={retake} className="rounded-lg px-4 py-2 text-sm">
               Retake
             </button>
           </>

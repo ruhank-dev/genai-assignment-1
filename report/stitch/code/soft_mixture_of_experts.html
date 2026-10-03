@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed-dim": "#b9c3ff", "primary-fixed": "#ffddb8", "surface-container-highest": "#d9e3f1", "secondary-container": "#4868f1", "inverse-on-surface": "#e8f2ff", "tertiary-fixed-dim": "#4edea3", "surface-container": "#e4effd", "error": "#ba1a1a", "on-error": "#ffffff", "inverse-primary": "#ffb95f", "outline": "#867461", "on-primary-container": "#613b00", "secondary-fixed": "#dde1ff", "error-container": "#ffdad6", "surface": "#f7f9ff", "outline-variant": "#d8c3ad", "inverse-surface": "#27313c", "on-primary-fixed": "#2a1700", "on-surface-variant": "#534434", "on-tertiary-fixed": "#002113", "on-tertiary": "#ffffff", "surface-variant": "#d9e3f1", "surface-bright": "#f7f9ff", "primary-container": "#f59e0b", "surface-container-low": "#edf4ff", "surface-dim": "#d1dbe8", "primary": "#855300", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "surface-tint": "#855300", "on-secondary-container": "#fffbff", "on-primary": "#ffffff", "on-surface": "#121d26", "on-tertiary-fixed-variant": "#005236", "on-secondary-fixed-variant": "#0034c0", "tertiary": "#006c49", "on-error-container": "#93000a", "surface-container-high": "#dfe9f7", "secondary": "#2a4dd7", "on-tertiary-container": "#004e34", "primary-fixed-dim": "#ffb95f", "background": "#f7f9ff", "on-primary-fixed-variant": "#653e00", "tertiary-fixed": "#6ffbbe", "tertiary-container": "#30c88f", "on-secondary-fixed": "#001257", "on-background": "#121d26" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "margin": "1.5rem", "space-md": "1rem", "space-xl": "2rem", "gutter": "1.25rem", "space-sm": "0.75rem", "space-xs": "0.375rem", "space-lg": "1.5rem" }, "fontFamily": { "body-sm": [ "Inter" ], "headline-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "data-tabular": [ "Inter" ], "label-prominent": [ "Inter" ], "body-lg": [ "Inter" ], "title-card": [ "Plus Jakarta Sans" ], "data-metric": [ "Inter" ], "body-md": [ "Inter" ], "label-caption": [ "Inter" ], "headline-sm": [ "Plus Jakarta Sans" ], "display-hero": [ "Plus Jakarta Sans" ] }, "fontSize": { "body-sm": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "data-tabular": [ "12px", { "lineHeight": "16px", "fontWeight": "600" } ], "label-prominent": [ "13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "title-card": [ "15px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "600" } ], "data-metric": [ "24px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "label-caption": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "headline-sm": [ "18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "display-hero": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" } ] } } } };</script></head><body class="min-h-screen w-full bg-gradient-to-br from-[#ffd8be] via-[#fff4cc] to-[#cfd8ff] relative overflow-x-hidden font-body-md text-on-surface antialiased"><div class="fixed inset-0 pointer-events-none z-0"><div class="absolute -top-32 -left-32 w-96 h-96 bg-[#ffd1b3] rounded-full blur-[100px] opacity-70"></div><div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[#c3ceff] rounded-full blur-[120px] opacity-60"></div><div class="absolute -bottom-32 left-1/3 w-[600px] h-[400px] bg-[#d5f0e3] rounded-full blur-[110px] opacity-60"></div></div><div class="relative z-10 max-w-[1400px] h-[960px] mx-auto my-6 rounded-[40px] bg-surface-container-lowest/25 backdrop-blur-2xl border border-surface-container-lowest/60 shadow-[0_20px_60px_-15px_rgba(31,38,135,0.08),inset_0_1px_2px_rgba(255,255,255,0.9)] p-6 flex flex-col justify-between overflow-hidden"><header class="w-full h-16 flex items-center justify-between shrink-0 mb-4 px-2"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center ring-2 ring-surface-container-lowest/80 shadow-sm"><span class="material-symbols-outlined text-on-primary text-[20px]">person</span></div><div class="flex flex-col"><span class="font-title-card text-title-card text-on-surface leading-none">Welcome, Ruhan!</span><span class="font-label-caption text-label-caption text-on-surface-variant mt-0.5">Enterprise AI Suite</span></div></div><div class="flex-1 max-w-md mx-6"><div class="relative flex items-center w-full h-11 px-4 rounded-full bg-surface-container-lowest/40 backdrop-blur-md border border-surface-container-lowest/70 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8)]"><span class="material-symbols-outlined text-on-surface-variant text-[20px] mr-2">search</span><span class="flex-1 font-body-sm text-body-sm text-on-surface-variant select-none">Search images or models here</span><kbd class="px-2 py-0.5 rounded-full bg-surface-container-lowest/70 border border-surface-container-lowest text-on-surface-variant font-label-caption text-label-caption shadow-sm">⌘K</kbd></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center h-10 px-1.5 py-1 rounded-full bg-surface-container-lowest/50 backdrop-blur-md border border-surface-container-lowest/80"><button class="w-7 h-7 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface shadow-sm" type="button"><span class="material-symbols-outlined text-[16px]">light_mode</span></button><button class="w-7 h-7 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[16px]">dark_mode</span></button></div><button class="relative w-10 h-10 rounded-full bg-surface-container-lowest/50 backdrop-blur-md border border-surface-container-lowest/80 flex items-center justify-center text-on-surface hover:bg-surface-container-lowest/80 transition-all" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></button></div></header><div class="flex-1 flex gap-space-lg overflow-hidden min-h-0 relative"><aside class="w-16 shrink-0 flex flex-col items-center justify-center"><nav class="rounded-full bg-surface-container-lowest/40 backdrop-blur-xl border border-surface-container-lowest/70 p-2 flex flex-col items-center gap-3 shadow-sm" data-active-classes="bg-surface-container-lowest text-primary-container shadow-md scale-105"><a class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest/60 hover:text-on-surface transition-all" data-path="universal-restoration" href="#" title="Universal Restoration"><span class="material-symbols-outlined text-[20px]">auto_fix_high</span></a><a class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest/60 hover:text-on-surface transition-all" data-path="hard-routed-restoration" href="#" title="Hard-Routed Restoration"><span class="material-symbols-outlined text-[20px]">alt_route</span></a><a aria-current="page" class="w-10 h-10 rounded-full flex items-center justify-center transition-all bg-surface-container-lowest text-primary-container shadow-md scale-105" data-path="soft-mixture-of-experts" href="#" title="Soft Mixture-of-Experts"><span class="material-symbols-outlined text-[20px]">layers</span></a><a class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest/60 hover:text-on-surface transition-all" data-path="face-to-sketch" href="#" title="Face-to-Sketch"><span class="material-symbols-outlined text-[20px]">draw</span></a></nav></aside><main class="flex-1 overflow-y-auto pr-1 h-full min-h-0"><div class="flex flex-col w-full gap-space-lg pb-6">
+<!-- Diagnostics Live Telemetry Strip -->
+<div class="w-full flex items-center justify-between px-space-lg py-space-sm rounded-full bg-surface-container-lowest/60 backdrop-blur-xl shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary"></span>
+</span>
+<span class="font-label-prominent text-label-prominent text-on-surface">MoE Runtime Synced</span>
+</div>
+<div class="h-3.5 w-px bg-on-surface-variant/20"></div>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="font-data-tabular text-data-tabular flex items-center gap-1.5">
+<span class="text-on-surface-variant/60 font-body-sm">Gating Entropy:</span>
+<span class="text-on-surface font-title-card">0.82 H(x)</span>
+</span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-data-tabular text-data-tabular flex items-center gap-1.5">
+<span class="text-on-surface-variant/60 font-body-sm">Expert Diversity:</span>
+<span class="text-tertiary font-title-card">High (Rank 4)</span>
+</span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-data-tabular text-data-tabular flex items-center gap-1.5">
+<span class="text-on-surface-variant/60 font-body-sm">Gradient Stability:</span>
+<span class="text-on-surface font-title-card">99.82%</span>
+</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-container-high font-data-tabular text-data-tabular text-secondary font-semibold">
+        FP16 TensorRT
+      </span>
+<span class="px-3 py-1 rounded-full bg-primary-container/20 text-on-primary-container font-label-caption text-label-caption uppercase tracking-wider">
+        Continuous Mix
+      </span>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter w-full">
+<!-- Card 1: Soft Gating Weights (Col 1-5) -->
+<div class="col-span-5 flex flex-col justify-between p-space-lg rounded-[28px] bg-gradient-to-b from-surface-container-lowest/70 to-surface-container-lowest/30 backdrop-blur-2xl shadow-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">tune</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Soft Gating Distribution</h2>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high/70 text-on-surface-variant font-data-tabular text-data-tabular">
+            W_g ∈ ℝ^{4×d}
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          P(Expert = i | x) = exp(W_{g,i} · x) / ∑ exp(W_{g,j} · x)
+        </p>
+</div>
+<!-- 4 Experts Slider/Weight Bars -->
+<div class="flex flex-col gap-3.5 my-space-md">
+<!-- Expert 1 -->
+<div class="p-3 rounded-2xl bg-surface-container-lowest/60 shadow-sm flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-title-card text-title-card text-on-surface">E₁: Denoise Net</span>
+<span class="font-label-caption text-label-caption text-on-surface-variant">U-Net Wavelet</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-data-metric text-headline-sm text-on-surface">12%</span>
+<button class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">lock_open</span>
+</button>
+</div>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden p-0.5">
+<div class="h-full rounded-full bg-secondary" style="width: 12%"></div>
+</div>
+</div>
+<!-- Expert 2 (Dominant) -->
+<div class="p-3.5 rounded-2xl bg-gradient-to-r from-primary-container/20 via-surface-container-lowest/90 to-primary-container/10 shadow-md relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-primary-container/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-title-card text-title-card text-on-surface font-bold">E₂: Deblur Transformer</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-label-caption text-label-caption font-bold tracking-wide">
+                DOMINANT EXPERT
+              </span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-data-metric text-data-metric text-on-surface font-bold">68%</span>
+<button class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+</button>
+</div>
+</div>
+<div class="w-full h-2.5 rounded-full bg-surface-container-highest overflow-hidden mt-2 relative z-10">
+<div class="h-full rounded-full bg-gradient-to-r from-primary-container to-inverse-primary shadow-sm" style="width: 68%"></div>
+</div>
+</div>
+<!-- Expert 3 -->
+<div class="p-3 rounded-2xl bg-surface-container-lowest/60 shadow-sm flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-title-card text-title-card text-on-surface">E₃: Deep Inpainter</span>
+<span class="font-label-caption text-label-caption text-on-surface-variant">Spatial Masking</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-data-metric text-headline-sm text-on-surface">15%</span>
+<button class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">lock_open</span>
+</button>
+</div>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden p-0.5">
+<div class="h-full rounded-full bg-tertiary" style="width: 15%"></div>
+</div>
+</div>
+<!-- Expert 4 -->
+<div class="p-3 rounded-2xl bg-surface-container-lowest/60 shadow-sm flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-title-card text-title-card text-on-surface">E₄: Super-Resolution GAN</span>
+<span class="font-label-caption text-label-caption text-on-surface-variant">4x Upscale</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-data-metric text-headline-sm text-on-surface">5%</span>
+<button class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">lock_open</span>
+</button>
+</div>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden p-0.5">
+<div class="h-full rounded-full bg-outline" style="width: 5%"></div>
+</div>
+</div>
+</div>
+<!-- Card Footer Controls -->
+<div class="pt-2 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-caption text-label-caption text-on-surface-variant">Auto-Normalize</span>
+<div class="w-9 h-5 rounded-full bg-primary-container relative cursor-pointer flex items-center px-0.5">
+<div class="w-4 h-4 rounded-full bg-surface-container-lowest shadow-sm translate-x-4 transition-transform"></div>
+</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-lowest/80 text-on-surface font-label-prominent text-label-prominent hover:bg-surface-container-lowest transition-all shadow-sm" type="button">
+          Reset Softmax
+        </button>
+</div>
+</div>
+<!-- Card 2: Expert Contribution & Synthesis Formula (Col 6-8) -->
+<div class="col-span-3 flex flex-col justify-between p-space-lg rounded-[28px] bg-gradient-to-b from-surface-container-lowest/70 to-surface-container-lowest/30 backdrop-blur-2xl shadow-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title-card text-title-card text-on-surface">Synthesis Blend</h3>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/30 text-on-tertiary-container font-label-caption text-label-caption">
+            Linear Comb.
+          </span>
+</div>
+<!-- Mathematical Formula Pill -->
+<div class="mt-2 px-3 py-1.5 rounded-xl bg-surface-container-lowest/80 shadow-sm flex items-center justify-center">
+<span class="font-title-card text-body-md text-primary tracking-wide">
+            x̂ = ∑_{i=1}^{4} (w_i · E_i(x))
+          </span>
+</div>
+</div>
+<!-- Donut Ring Chart Visualization -->
+<div class="relative w-44 h-44 mx-auto my-3 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 120 120">
+<circle class="text-surface-container" cx="60" cy="60" fill="none" r="48" stroke="currentColor" stroke-width="12"></circle>
+<!-- E2: Deblur (68%) = ~205 perimeter -->
+<circle class="text-primary-container" cx="60" cy="60" fill="none" r="48" stroke="currentColor" stroke-dasharray="301.59" stroke-dashoffset="96.5" stroke-linecap="round" stroke-width="12"></circle>
+<!-- E3: Inpaint (15%) = ~45 perimeter -->
+<circle class="text-tertiary" cx="60" cy="60" fill="none" r="48" stroke="currentColor" stroke-dasharray="301.59" stroke-dashoffset="256.35" stroke-linecap="round" stroke-width="12"></circle>
+<!-- E1: Denoise (12%) = ~36 perimeter -->
+<circle class="text-secondary" cx="60" cy="60" fill="none" r="48" stroke="currentColor" stroke-dasharray="301.59" stroke-dashoffset="265.4" stroke-linecap="round" stroke-width="12"></circle>
+<!-- E4: Super-Res (5%) = ~15 perimeter -->
+<circle class="text-outline" cx="60" cy="60" fill="none" r="48" stroke="currentColor" stroke-dasharray="301.59" stroke-dashoffset="286.5" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute flex flex-col items-center justify-center text-center">
+<span class="font-data-metric text-data-metric text-on-surface leading-tight">68%</span>
+<span class="font-label-caption text-label-caption text-on-surface-variant font-semibold">Deblur Vector</span>
+</div>
+</div>
+<!-- Segmented Stacked Strip -->
+<div class="flex flex-col gap-2">
+<span class="font-label-caption text-label-caption text-on-surface-variant">Manifold Space Allotment</span>
+<div class="w-full h-3 rounded-full bg-surface-container flex overflow-hidden p-0.5 gap-0.5">
+<div class="h-full rounded-l-full bg-secondary" style="width: 12%" title="E1: 12%"></div>
+<div class="h-full bg-primary-container" style="width: 68%" title="E2: 68%"></div>
+<div class="h-full bg-tertiary" style="width: 15%" title="E3: 15%"></div>
+<div class="h-full rounded-r-full bg-outline" style="width: 5%" title="E4: 5%"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-data-tabular text-data-tabular pt-1">
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>12%</span>
+<span class="flex items-center gap-1 font-bold text-on-surface"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>68%</span>
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>15%</span>
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-outline"></span>5%</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Model Inference & Convergence (Col 9-12) -->
+<div class="col-span-4 flex flex-col justify-between p-space-lg rounded-[28px] bg-gradient-to-b from-surface-container-lowest/70 to-surface-container-lowest/30 backdrop-blur-2xl shadow-sm">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-caption text-label-caption uppercase tracking-wider text-on-surface-variant">Latency &amp; Dispatch</span>
+<div class="flex items-center gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-data-tabular text-data-tabular">
+              MoE Top-2 Active
+            </span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-hero text-display-hero text-on-surface">31</span>
+<span class="font-title-card text-headline-sm text-on-surface-variant">ms</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Batched parallel dispatch across 4 specialized subnetworks with dynamic CUDA graph fusion.
+        </p>
+</div>
+<!-- Sparkline & Parameter Matrix -->
+<div class="my-space-sm p-space-sm rounded-2xl bg-surface-container-lowest/60 shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-prominent text-label-prominent text-on-surface">Convergence Gradient</span>
+<span class="font-data-tabular text-data-tabular text-tertiary">L_rec: 0.0142</span>
+</div>
+<svg class="w-full h-12 text-secondary" fill="none" viewbox="0 0 200 48">
+<path d="M 0,40 Q 30,38 50,28 T 100,22 T 150,14 T 200,8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M 0,40 Q 30,38 50,28 T 100,22 T 150,14 T 200,8 L 200,48 L 0,48 Z" fill="currentColor" fill-opacity="0.1"></path>
+</svg>
+</div>
+<!-- Tuning Parameters -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="p-2.5 rounded-xl bg-surface-container-lowest/50 shadow-sm flex flex-col">
+<span class="font-label-caption text-label-caption text-on-surface-variant">Temperature (τ)</span>
+<span class="font-title-card text-title-card text-on-surface mt-0.5">τ = 0.75</span>
+</div>
+<div class="p-2.5 rounded-xl bg-surface-container-lowest/50 shadow-sm flex flex-col">
+<span class="font-label-caption text-label-caption text-on-surface-variant">Auxiliary Loss</span>
+<span class="font-title-card text-title-card text-tertiary mt-0.5">α = 0.01 (Balanced)</span>
+</div>
+</div>
+</div>
+<!-- Card 4 & 5: Visual Transformation Duo (Input Degraded vs Soft-Blended Output) -->
+<div class="col-span-12 grid grid-cols-12 gap-gutter">
+<!-- Left: Composite Degraded Input -->
+<div class="col-span-6 rounded-[28px] bg-gradient-to-b from-surface-container-lowest/70 to-surface-container-lowest/30 backdrop-blur-2xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[20px]">broken_image</span>
+<span class="font-title-card text-title-card text-on-surface">Composite Input (Multi-Defect Source)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label-caption text-label-caption">
+              Noise + Motion Blur
+            </span>
+</div>
+</div>
+<div class="relative w-full h-64 rounded-2xl overflow-hidden shadow-inner group">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of an elegant woman with complex cinematic lighting, heavily compromised by realistic high-ISO sensor grain, directional motion blur streaks, low frequency chromatic noise, and small missing pixel blocks, raw diagnostic capture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0En2YdqQR3PuL1K0ECu62aca444ncUkQEm2uHm8JUOIAvAZy2BjK1ttwSulqYb874QPmpTUWsPniovxxlYKoxnZahUKyiONgEkO277A71WejLv8W7nvl2WxTEbm4abilDWBuOoKWdE0tsoef1MmJ6uO_Zq3HXimji07KGj71sfoI8A63XvSfANjMVc3CoDUZZP7vW7XhhjBrLIgG5AynQSsjneU7_48bX5d8Hwwuw8MbRGL4bACFGEA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-inverse-surface/80 text-inverse-on-surface backdrop-blur-md font-data-tabular text-data-tabular">
+              Defect Vector: σ_blur=4.2px, σ_noise=0.28
+            </span>
+</div>
+<div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-caption text-label-caption shadow-sm">
+            Input Matrix (x)
+          </div>
+</div>
+</div>
+<!-- Right: Masterfully Blended Output -->
+<div class="col-span-6 rounded-[28px] bg-gradient-to-b from-surface-container-lowest/70 to-surface-container-lowest/30 backdrop-blur-2xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">auto_awesome</span>
+<span class="font-title-card text-title-card text-on-surface font-semibold">Blended Output (Soft Continuous Synthesis)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-data-tabular text-data-tabular">
+              PSNR 36.8 dB • SSIM 0.984
+            </span>
+</div>
+</div>
+<div class="relative w-full h-64 rounded-2xl overflow-hidden shadow-inner group">
+<img class="w-full h-full object-cover" data-alt="The exact same portrait restored to hyper-realistic perfection, showing crisp micro-eyelash details, pristine porcelain skin pores, natural bokeh highlights, zero grain, sharp defined edges, soft ambient glow in warm peach and amber tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl7fg_HH-c7px293Gh2H11GN3k501OiLuaSobBIstZG1rtBE53M6VL7N-BwukR6i6od-SVFsJA6O-mCwE5RxmJgiatZ5FE7e7x23h2Lidd8lEYJar8ilLicAkPR0a3qo1v8hwboA-E6Rzb7hQxKPdg3_3QBgGFy3sg6NEKxzs3FJ-FUarNKp2TGipe4Qzq-kQJdESuPtkXjQvPwznOc0y89xm7kPiORN8i7bE4SuKV9KMudxmmCmsFhA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/90 text-on-surface backdrop-blur-md font-label-prominent text-label-prominent shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-[16px]">check_circle</span>
+              High-Frequency Textures Preserved
+            </span>
+<button class="px-4 py-1.5 rounded-full bg-gradient-to-r from-primary-container to-inverse-primary text-on-primary font-label-prominent text-label-prominent shadow-md hover:scale-105 transition-all" type="button">
+              Export 4K Latent
+            </button>
+</div>
+<div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-primary-container text-on-primary font-label-caption text-label-caption shadow-sm">
+            Fused Manifold (x̂)
+          </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple interactive micro-state toggle for weight locks
+  document.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (icon && (icon.textContent === 'lock_open' || icon.textContent === 'lock')) {
+        if (icon.textContent === 'lock_open') {
+          icon.textContent = 'lock';
+          btn.classList.add('bg-primary-container', 'text-on-primary');
+          btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        } else {
+          icon.textContent = 'lock_open';
+          btn.classList.remove('bg-primary-container', 'text-on-primary');
+          btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+        }
+      }
+    });
+  });
+</script></main></div><footer class="w-full h-14 shrink-0 flex items-center justify-between px-2 pt-2"><nav class="flex items-center gap-1.5 p-1 rounded-full bg-surface-container-lowest/45 backdrop-blur-xl border border-surface-container-lowest/70 shadow-sm" data-active-classes="bg-surface-container-lowest text-on-surface font-title-card shadow-sm"><a class="px-4 py-2 rounded-full font-label-prominent text-label-prominent text-on-surface-variant hover:text-on-surface transition-all" data-path="universal-restoration" href="#">Universal Restoration</a><a class="px-4 py-2 rounded-full font-label-prominent text-label-prominent text-on-surface-variant hover:text-on-surface transition-all" data-path="hard-routed-restoration" href="#">Hard-Routed</a><a aria-current="page" class="px-4 py-2 rounded-full transition-all bg-surface-container-lowest text-on-surface font-title-card shadow-sm" data-path="soft-mixture-of-experts" href="#">Mixture of Experts</a><a class="px-4 py-2 rounded-full font-label-prominent text-label-prominent text-on-surface-variant hover:text-on-surface transition-all" data-path="face-to-sketch" href="#">Face-to-Sketch</a></nav><button class="w-11 h-11 rounded-full bg-surface-container-lowest/60 backdrop-blur-xl border border-surface-container-lowest/80 flex items-center justify-center text-on-surface hover:bg-surface-container-lowest hover:scale-105 transition-all shadow-sm" type="button"><span class="material-symbols-outlined text-[22px]">add</span></button></footer></div></body></html>

@@ -7,7 +7,7 @@ const ROWS: { key: string; label: string; bar: string }[] = [
 
 export default function ClassifierProbabilities({ probs, predicted }: { probs: Record<string, number>; predicted: string }) {
   return (
-    <div className="space-y-3 rounded-xl bg-ink-900 p-4 ring-1 ring-ink-700">
+    <div className="space-y-3 glass p-4">
       <div className="text-sm font-semibold">Classifier probabilities</div>
       {ROWS.map((r) => {
         const p = probs[r.key] ?? 0;

@@ -8,7 +8,7 @@ const PARTS: { key: string; sym: string; color: string }[] = [
 /** Shows x̂ = Σ w_k · branch_k as a stacked contribution strip. */
 export default function ExpertContribution({ weights }: { weights: Record<string, number> }) {
   return (
-    <div className="rounded-xl bg-ink-900 p-4 ring-1 ring-ink-700">
+    <div className="glass p-4">
       <div className="mb-2 text-sm font-semibold">Expert contribution to the output</div>
       <div className="flex h-8 overflow-hidden rounded-lg">
         {PARTS.map((p) => (
@@ -17,10 +17,10 @@ export default function ExpertContribution({ weights }: { weights: Record<string
           </div>
         ))}
       </div>
-      <p className="mt-3 font-mono text-xs text-slate-300">
+      <p className="mt-3 font-mono text-xs text-slate-600">
         x̂ = {PARTS.map((p) => `${(weights[p.key] ?? 0).toFixed(2)}·${p.sym}`).join(" + ")}
       </p>
-      <p className="mt-1 text-xs text-slate-400">The output is a convex combination: all four branches run and the gate decides how much each contributes.</p>
+      <p className="mt-1 text-xs text-slate-500">The output is a convex combination: all four branches run and the gate decides how much each contributes.</p>
     </div>
   );
 }

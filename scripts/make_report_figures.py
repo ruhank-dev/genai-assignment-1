@@ -101,3 +101,12 @@ for s, d in copy.items():  # compact JPEGs (max 1600 px wide) keep the PDF small
     im.thumbnail((1600, 1600))
     im.save(OUT / d.replace(".png", ".jpg"), quality=88)
 print("figures:", sorted(p.name for p in OUT.iterdir()))
+
+# --- Google Stitch design: 2x2 composite of the exported screens ---
+names = ["universal_restoration", "hard_routed_restoration", "soft_mixture_of_experts", "face_to_sketch_generator"]
+tiles = [Image.open(f"report/stitch/{n}.png").convert("RGB") for n in names]
+w, h = 900, int(900 * tiles[0].height / tiles[0].width)
+sheet = Image.new("RGB", (2 * w + 12, 2 * h + 12), "white")
+for k, im in enumerate(tiles):
+    sheet.paste(im.resize((w, h)), ((k % 2) * (w + 12), (k // 2) * (h + 12)))
+sheet.save(OUT / "stitch_design.jpg", quality=88)

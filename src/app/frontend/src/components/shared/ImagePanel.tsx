@@ -13,15 +13,15 @@ export default function ImagePanel({ items }: { items: PanelItem[] }) {
     <>
       <div className="grid gap-4" style={{ gridTemplateColumns: `repeat(${items.length}, minmax(0, 1fr))` }}>
         {items.map((i) => (
-          <figure key={i.label} className="rounded-xl bg-ink-900 p-3 ring-1 ring-ink-700">
-            <figcaption className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">{i.label}</figcaption>
+          <figure key={i.label} className="glass p-3">
+            <figcaption className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">{i.label}</figcaption>
             <img
               src={i.src}
               alt={i.label}
               onClick={() => setZoom(i.src)}
               className="px aspect-square w-full cursor-zoom-in rounded-lg object-contain"
             />
-            {i.caption && <p className="mt-2 text-xs text-slate-400">{i.caption}</p>}
+            {i.caption && <p className="mt-2 text-xs text-slate-500">{i.caption}</p>}
           </figure>
         ))}
       </div>

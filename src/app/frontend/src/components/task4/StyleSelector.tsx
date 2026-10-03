@@ -13,13 +13,13 @@ export default function StyleSelector({ value, onChange }: { value: number; onCh
           role="radio"
           aria-checked={value === s.id}
           onClick={() => onChange(s.id)}
-          className={`rounded-xl p-4 text-left ring-1 transition ${value === s.id ? "bg-sky-500/15 shadow-glow ring-sky-400" : "bg-ink-900 ring-ink-700 hover:ring-slate-500"}`}
+          className={`rounded-xl p-4 text-left ring-1 transition ${value === s.id ? "bg-white/70 shadow-glow ring-amber-400" : "bg-ink-900 ring-white/70 bg-white/50 hover:bg-white/80"}`}
         >
-          <svg viewBox="0 0 120 24" className="mb-3 h-6 w-full text-slate-200">
+          <svg viewBox="0 0 120 24" className="mb-3 h-6 w-full text-slate-700">
             <path d="M4 18 C 30 2, 50 22, 74 8 S 104 14, 116 6" fill="none" stroke="currentColor" strokeWidth={s.weight} strokeLinecap="round" />
           </svg>
           <div className="font-semibold">{s.title}</div>
-          <div className="text-xs text-slate-400">{s.desc}</div>
+          <div className="text-xs text-slate-500">{s.desc}</div>
         </button>
       ))}
     </div>

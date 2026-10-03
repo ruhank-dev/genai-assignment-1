@@ -26,7 +26,7 @@ export default function CorruptionControls({ kind, severity, onChange }: Props) 
           <button
             key={k.id}
             onClick={() => onChange(k.id, severity)}
-            className={`rounded-full px-3 py-1.5 text-sm ring-1 ${kind === k.id ? "bg-sky-500/20 ring-sky-400" : "ring-ink-700 hover:ring-slate-500"}`}
+            className={`rounded-full px-3 py-1.5 text-sm ring-1 ${kind === k.id ? "bg-amber-300/60 ring-amber-400" : "ring-white/70 bg-white/50 hover:bg-white/80"}`}
           >
             {k.label}
           </button>
@@ -37,7 +37,7 @@ export default function CorruptionControls({ kind, severity, onChange }: Props) 
           <button
             key={s}
             onClick={() => onChange(kind, i + 1)}
-            className={`rounded-lg px-3 py-1.5 text-xs ring-1 ${severity === i + 1 ? "bg-amber-500/20 ring-amber-400" : "ring-ink-700 hover:ring-slate-500"}`}
+            className={`rounded-lg px-3 py-1.5 text-xs ring-1 ${severity === i + 1 ? "bg-amber-300/60 ring-amber-400" : "ring-white/70 bg-white/50 hover:bg-white/80"}`}
           >
             {["Low", "Medium", "High"][i]} · {s}
           </button>

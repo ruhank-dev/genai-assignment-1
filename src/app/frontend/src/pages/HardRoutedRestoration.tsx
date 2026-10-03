@@ -27,7 +27,7 @@ export default function HardRoutedRestoration() {
     <div className="mx-auto max-w-5xl space-y-6">
       <header>
         <h1 className="text-2xl font-bold">Hard-Routed Restoration</h1>
-        <p className="text-sm text-slate-400">A classifier names the corruption, then exactly one specialist (or the identity bypass) restores the image.</p>
+        <p className="text-sm text-slate-500">A classifier names the corruption, then exactly one specialist (or the identity bypass) restores the image.</p>
       </header>
 
       <section className="grid gap-5 lg:grid-cols-2">
@@ -35,7 +35,7 @@ export default function HardRoutedRestoration() {
         <SampleCorruptor onFile={setFile} />
       </section>
 
-      <button disabled={!file || inf.loading} onClick={submit} className="rounded-lg bg-sky-500 px-5 py-2.5 font-semibold text-ink-950 disabled:opacity-40">
+      <button disabled={!file || inf.loading} onClick={submit} className="btn-primary">
         Analyze &amp; Restore
       </button>
 

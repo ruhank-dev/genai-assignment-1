@@ -25,13 +25,13 @@ export default function SampleGallery({ onPick }: { onPick: (f: File, url: strin
           <button
             key={u}
             onClick={() => pick(u)}
-            className={`overflow-hidden rounded-lg ring-1 transition ${active === u ? "shadow-glow ring-sky-400" : "ring-ink-700 hover:ring-slate-500"}`}
+            className={`overflow-hidden rounded-lg ring-1 transition ${active === u ? "shadow-glow ring-amber-400" : "ring-white/70 bg-white/50 hover:bg-white/80"}`}
           >
             <img src={u} alt="clean sample" className="aspect-square w-full object-cover" />
           </button>
         ))}
       </div>
-      {problem && <p className="mt-2 text-xs text-rose-300">{problem}</p>}
+      {problem && <p className="mt-2 text-xs text-rose-600">{problem}</p>}
     </div>
   );
 }

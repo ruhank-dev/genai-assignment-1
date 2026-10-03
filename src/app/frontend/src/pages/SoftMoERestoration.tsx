@@ -27,7 +27,7 @@ export default function SoftMoERestoration() {
     <div className="mx-auto max-w-5xl space-y-6">
       <header>
         <h1 className="text-2xl font-bold">Soft Mixture-of-Experts Restoration</h1>
-        <p className="text-sm text-slate-400">A gate assigns a continuous weight to the identity branch and the three experts; the output is their weighted sum.</p>
+        <p className="text-sm text-slate-500">A gate assigns a continuous weight to the identity branch and the three experts; the output is their weighted sum.</p>
       </header>
 
       <section className="grid gap-5 lg:grid-cols-2">
@@ -35,7 +35,7 @@ export default function SoftMoERestoration() {
         <SampleCorruptor onFile={setFile} />
       </section>
 
-      <button disabled={!file || inf.loading} onClick={submit} className="rounded-lg bg-sky-500 px-5 py-2.5 font-semibold text-ink-950 disabled:opacity-40">
+      <button disabled={!file || inf.loading} onClick={submit} className="btn-primary">
         Run Soft MoE Restoration
       </button>
 

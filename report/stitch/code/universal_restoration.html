@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed-dim": "#b9c3ff", "primary-fixed": "#ffddb8", "surface-container-highest": "#d9e3f1", "secondary-container": "#4868f1", "inverse-on-surface": "#e8f2ff", "tertiary-fixed-dim": "#4edea3", "surface-container": "#e4effd", "error": "#ba1a1a", "on-error": "#ffffff", "inverse-primary": "#ffb95f", "outline": "#867461", "on-primary-container": "#613b00", "secondary-fixed": "#dde1ff", "error-container": "#ffdad6", "surface": "#f7f9ff", "outline-variant": "#d8c3ad", "inverse-surface": "#27313c", "on-primary-fixed": "#2a1700", "on-surface-variant": "#534434", "on-tertiary-fixed": "#002113", "on-tertiary": "#ffffff", "surface-variant": "#d9e3f1", "surface-bright": "#f7f9ff", "primary-container": "#f59e0b", "surface-container-low": "#edf4ff", "surface-dim": "#d1dbe8", "primary": "#855300", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "surface-tint": "#855300", "on-secondary-container": "#fffbff", "on-primary": "#ffffff", "on-surface": "#121d26", "on-tertiary-fixed-variant": "#005236", "on-secondary-fixed-variant": "#0034c0", "tertiary": "#006c49", "on-error-container": "#93000a", "surface-container-high": "#dfe9f7", "secondary": "#2a4dd7", "on-tertiary-container": "#004e34", "primary-fixed-dim": "#ffb95f", "background": "#f7f9ff", "on-primary-fixed-variant": "#653e00", "tertiary-fixed": "#6ffbbe", "tertiary-container": "#30c88f", "on-secondary-fixed": "#001257", "on-background": "#121d26" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "margin": "1.5rem", "space-md": "1rem", "space-xl": "2rem", "gutter": "1.25rem", "space-sm": "0.75rem", "space-xs": "0.375rem", "space-lg": "1.5rem" }, "fontFamily": { "body-sm": [ "Inter" ], "headline-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "data-tabular": [ "Inter" ], "label-prominent": [ "Inter" ], "body-lg": [ "Inter" ], "title-card": [ "Plus Jakarta Sans" ], "data-metric": [ "Inter" ], "body-md": [ "Inter" ], "label-caption": [ "Inter" ], "headline-sm": [ "Plus Jakarta Sans" ], "display-hero": [ "Plus Jakarta Sans" ] }, "fontSize": { "body-sm": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "data-tabular": [ "12px", { "lineHeight": "16px", "fontWeight": "600" } ], "label-prominent": [ "13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "title-card": [ "15px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "600" } ], "data-metric": [ "24px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "label-caption": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "headline-sm": [ "18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "display-hero": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" } ] } } } };</script></head><body class="min-h-screen w-full bg-gradient-to-br from-[#ffd8be] via-[#fff4cc] to-[#cfd8ff] relative overflow-x-hidden font-body-md text-on-surface antialiased"><div class="fixed inset-0 pointer-events-none z-0"><div class="absolute -top-32 -left-32 w-96 h-96 bg-[#ffd1b3] rounded-full blur-[100px] opacity-70"></div><div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[#c3ceff] rounded-full blur-[120px] opacity-60"></div><div class="absolute -bottom-32 left-1/3 w-[600px] h-[400px] bg-[#d5f0e3] rounded-full blur-[110px] opacity-60"></div></div><div class="relative z-10 max-w-[1400px] h-[960px] mx-auto my-6 rounded-[40px] bg-surface-container-lowest/25 backdrop-blur-2xl border border-surface-container-lowest/60 shadow-[0_20px_60px_-15px_rgba(31,38,135,0.08),inset_0_1px_2px_rgba(255,255,255,0.9)] p-6 flex flex-col justify-between overflow-hidden"><header class="w-full h-16 flex items-center justify-between shrink-0 mb-4 px-2"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center ring-2 ring-surface-container-lowest/80 shadow-sm"><span class="material-symbols-outlined text-on-primary text-[20px]">person</span></div><div class="flex flex-col"><span class="font-title-card text-title-card text-on-surface leading-none">Welcome, Ruhan!</span><span class="font-label-caption text-label-caption text-on-surface-variant mt-0.5">Enterprise AI Suite</span></div></div><div class="flex-1 max-w-md mx-6"><div class="relative flex items-center w-full h-11 px-4 rounded-full bg-surface-container-lowest/40 backdrop-blur-md border border-surface-container-lowest/70 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8)]"><span class="material-symbols-outlined text-on-surface-variant text-[20px] mr-2">search</span><span class="flex-1 font-body-sm text-body-sm text-on-surface-variant select-none">Search images or models here</span><kbd class="px-2 py-0.5 rounded-full bg-surface-container-lowest/70 border border-surface-container-lowest text-on-surface-variant font-label-caption text-label-caption shadow-sm">⌘K</kbd></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center h-10 px-1.5 py-1 rounded-full bg-surface-container-lowest/50 backdrop-blur-md border border-surface-container-lowest/80"><button class="w-7 h-7 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface shadow-sm" type="button"><span class="material-symbols-outlined text-[16px]">light_mode</span></button><button class="w-7 h-7 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[16px]">dark_mode</span></button></div><button class="relative w-10 h-10 rounded-full bg-surface-container-lowest/50 backdrop-blur-md border border-surface-container-lowest/80 flex items-center justify-center text-on-surface hover:bg-surface-container-lowest/80 transition-all" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></button></div></header><div class="flex-1 flex gap-space-lg overflow-hidden min-h-0 relative"><aside class="w-16 shrink-0 flex flex-col items-center justify-center"><nav class="rounded-full bg-surface-container-lowest/40 backdrop-blur-xl border border-surface-container-lowest/70 p-2 flex flex-col items-center gap-3 shadow-sm" data-active-classes="bg-surface-container-lowest text-primary-container shadow-md scale-105"><a aria-current="page" class="w-10 h-10 rounded-full flex items-center justify-center transition-all bg-surface-container-lowest text-primary-container shadow-md scale-105" data-path="universal-restoration" href="#" title="Universal Restoration"><span class="material-symbols-outlined text-[20px]">auto_fix_high</span></a><a class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest/60 hover:text-on-surface transition-all" data-path="hard-routed-restoration" href="#" title="Hard-Routed Restoration"><span class="material-symbols-outlined text-[20px]">alt_route</span></a><a class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest/60 hover:text-on-surface transition-all" data-path="soft-mixture-of-experts" href="#" title="Soft Mixture-of-Experts"><span class="material-symbols-outlined text-[20px]">layers</span></a><a class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest/60 hover:text-on-surface transition-all" data-path="face-to-sketch" href="#" title="Face-to-Sketch"><span class="material-symbols-outlined text-[20px]">draw</span></a></nav></aside><main class="flex-1 overflow-y-auto pr-1 h-full min-h-0"><div class="flex flex-col w-full gap-space-lg pb-4">
+<div class="grid grid-cols-12 gap-gutter w-full">
+<!-- 1. System Telemetry Bento Card (Cols 1-4) -->
+<div class="col-span-12 lg:col-span-4 rounded-lg bg-surface-container-lowest/40 backdrop-blur-2xl p-space-lg flex flex-col justify-between shadow-md relative overflow-hidden group">
+<div class="absolute -top-12 -right-12 w-36 h-36 bg-tertiary-container/20 rounded-full blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary"></span>
+</span>
+<span class="font-label-prominent text-label-prominent text-on-surface">Models ready 7/7</span>
+</div>
+<span class="font-data-tabular text-data-tabular px-2.5 py-1 rounded-full bg-surface-container-lowest/60 text-tertiary shadow-sm">
+            Optimal Cluster
+          </span>
+</div>
+<div class="mt-4 flex flex-col">
+<div class="font-display-hero text-display-hero text-on-surface tracking-tight leading-none" id="live-clock">10:42:15 AM</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="material-symbols-outlined text-[16px] text-primary-container">hub</span>
+<span class="font-label-prominent text-label-prominent text-on-surface-variant">Active Pipeline: <strong class="text-on-surface font-semibold">UNet-Swinv2</strong></span>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 flex flex-wrap gap-2">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary-container/15 text-secondary font-data-tabular text-data-tabular shadow-sm">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+<span>Inference 17 ms</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest/60 text-on-surface-variant font-data-tabular text-data-tabular shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-tertiary">memory</span>
+<span>GPU: A100-80G (34% VRAM)</span>
+</div>
+</div>
+</div>
+<!-- 2. Sample Selector Bento Card (Cols 5-8) -->
+<div class="col-span-12 lg:col-span-4 rounded-lg bg-surface-container-lowest/40 backdrop-blur-2xl p-space-lg flex flex-col justify-between shadow-md">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="font-title-card text-title-card text-on-surface">Choose a sample</span>
+<span class="font-data-tabular text-data-tabular px-2 py-0.5 rounded-full bg-surface-container-lowest/70 text-on-surface-variant">6 available</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors" title="Shuffle Dataset" type="button">
+<span class="material-symbols-outlined text-[18px]">cached</span>
+</button>
+</div>
+<div class="grid grid-cols-4 gap-2.5">
+<!-- Puppy (Active) -->
+<button class="group relative aspect-square rounded-[18px] overflow-hidden shadow-sm ring-2 ring-primary-container transition-all scale-[1.02]" type="button">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="Close up portrait photograph of an adorable golden retriever puppy with warm soft fur, radiant studio lighting, and gentle curious eyes against an ethereal pastel peach backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO8IPcLUA5sAM38qqeesPwxK71ZJRoyim1bZ4LuHbfqUsZAyp8KgnlH5UueByEXjiXUKBbpfMi-zESZP_zP4wxbBuFV94P3kDe57DGYdcoa_t-sH-zciwMu4FvpkVo4aAwb0As0wqEMPLuQkDLVcpGnFJWgaowfvgKZrWMy0YhwzsUa_oA5XUep1ghgDkgrJaFsApL3whQDTJT-iJX07uLv7f-Y_T1kw392N-FJ0SwgpoXlUy6o5bE8A"/>
+<div class="absolute inset-0 bg-primary-container/15"></div>
+<span class="absolute bottom-1 right-1 w-2 h-2 rounded-full bg-primary-container shadow"></span>
+</button>
+<!-- Kitten -->
+<button class="group relative aspect-square rounded-[18px] overflow-hidden shadow-sm hover:scale-105 transition-all" type="button">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="High detail macro photograph of a small striped tabby kitten with luminous green eyes looking upwards, soft morning window light, high key studio setup." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaoxrgT6vz6lA_apQJPvvQ40RHFdgQgye14HpcXzfGp8wX46s--jOU8RNmlUJmB6ZwKPvGWXlyOf6xJrCx9pVINNKSF3saSEpUyj2GuiwFcqIZg_ImR_6_69Bl2XbvQ7EuSCH3MG5FLsRQY2rljzYyZaT-4E_ziwMcyzyWV8T1DG4Y39pNJa5RcqpnfdEAR4-Dn_x_ad8udnJ0nuW2UkYuRs_tg4LKt0G5eseEhEgRb-NXBLtTBIyQiw"/>
+</button>
+<!-- Corgi -->
+<button class="group relative aspect-square rounded-[18px] overflow-hidden shadow-sm hover:scale-105 transition-all" type="button">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="Charming studio portrait of a pembroke welsh corgi with perky pointed ears, friendly smile, clean minimalist lighting on a soft warm tinted ambient floor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKqh0njtFjqrv5yT6bAfetdi_MTtyYT3I-F-8vcGNb8gUtNm08C15enZ2rz53LO9i1--9nNEyais1r6nBock0kuh36GkchCb71hjf5x58BqYbhrnV3SzuuzqFCrO2HYOyjcqtPh3aR7ajFNga6mTnAWyB71zrtWxxORoC-ht_TZAyY39nQk1w-cMb_2u1PIKfDbpwIn_FXGoe4_zKnIcrfUvIEYb6vvb41AMj-6juHSu971MEkBsvo1Q"/>
+</button>
+<!-- Bunny -->
+<button class="group relative aspect-square rounded-[18px] overflow-hidden shadow-sm hover:scale-105 transition-all" type="button">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="Fluffy angora white bunny rabbit close-up, backlit whiskers, gentle rim lighting, soft natural studio composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGKzbR0aEPY_RU7rFeNbotHTxRbURAup5bJdB-8t8Am8x6xFEHMEhQnZc6wO2DIEKuzjSgnbe82q88pwaYON4l731SMo6pjJbMW0-wT4eQDdjLteftA8I8imXA95NAWqROeDYQlJlhRG_bjLBtalsRsna1NmNRJImdt9fnAlyLIUJaZ2vf4jucglCWnH9w1-veVSW7BkxGlo9fUtQpg8JmDUGH9s05-RJ_nbxwmqqPGIjOl2uB0YEASg"/>
+</button>
+<!-- Parrot -->
+<button class="group relative aspect-square rounded-[18px] overflow-hidden shadow-sm hover:scale-105 transition-all" type="button">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="Vibrant tropical green and yellow parakeet sitting perched on a light wood dowel, vivid plumage details, soft daylight studio glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTANrFl6udbQCAcdooVbguPu1QtXfNE9ok81CMFdjjBdn5U8eBjB9GBXfgbryfrcyVidx4qcaHad5LHtv84FwVxhjN1L3vtoFgiUOKDqZXydDl9dFuVmT5HR38_zJ2YphQR5-x0wzyHPnFrls0uMw10CAeNL0dq0UCxOcpDuwRq-M6kmlxFs_vlfoJv95pjeLr96AkI4gYINSSjpgIh0YVRB1EfB-gRoC0PuvFXVwbrDQlTZIZ0Yz45g"/>
+</button>
+<!-- French Bulldog -->
+<button class="group relative aspect-square rounded-[18px] overflow-hidden shadow-sm hover:scale-105 transition-all" type="button">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="Fawn french bulldog puppy looking forward with soulful eyes, delicate skin folds, professional portrait photography with warm diffused softbox lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeKzJK4E6BrWsJBMpWeijCMqRqLOrYouAjtwTYWdNUccgU71IefNSv0zp03G84DmHqh7LOD6G_daPuw4C47VE9G6dgT_cq6YUKbYTj7J-5wL9aIw3ZjPvweKDBPi8t5xZ-W389mK0ia6JCjx49yJWfNCZ4F3mvizb3zGb8M0VhU6AR42a03YOkSG17XHz5RlYWF0voLah_ldKSJCNLd_pK3xx-QlKnTSBPOWjSKHDHaeUUVGq0AyY_hQ"/>
+</button>
+<!-- Custom Upload Tile (spans 2 cols) -->
+<button class="col-span-2 aspect-[2/0.95] rounded-[18px] bg-surface-container-lowest/30 hover:bg-surface-container-lowest/60 transition-all flex items-center justify-center gap-2 text-on-surface-variant hover:text-on-surface shadow-sm group" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary-container group-hover:scale-110 transition-transform">cloud_upload</span>
+<span class="font-label-caption text-label-caption font-semibold">Drop / Upload custom</span>
+</button>
+</div>
+</div>
+<!-- 3. Runtime Corruption Controls Bento Card (Cols 9-12) -->
+<div class="col-span-12 lg:col-span-4 rounded-lg bg-surface-container-lowest/40 backdrop-blur-2xl p-space-lg flex flex-col justify-between shadow-md">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-title-card text-title-card text-on-surface">Runtime Corruption</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">tune</span>
+</div>
+<div class="flex items-center gap-1.5 p-1 rounded-full bg-surface-container-lowest/50 shadow-inner">
+<button class="flex-1 py-1.5 px-2 rounded-full font-label-caption text-label-caption text-on-surface-variant hover:text-on-surface transition-all text-center" type="button">
+            Salt &amp; Pepper
+          </button>
+<button class="flex-1 py-1.5 px-2 rounded-full font-label-caption text-label-caption bg-surface-container-lowest text-on-surface shadow-sm font-semibold text-center" type="button">
+            Gaussian blur
+          </button>
+<button class="flex-1 py-1.5 px-2 rounded-full font-label-caption text-label-caption text-on-surface-variant hover:text-on-surface transition-all text-center" type="button">
+            Occlusion
+          </button>
+</div>
+<div class="mt-4">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="font-label-caption text-label-caption uppercase tracking-wider">Severity</span>
+<span class="font-data-tabular text-data-tabular text-primary font-semibold">σ = 25.0</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex-1 py-1.5 rounded-full font-label-prominent text-label-prominent bg-surface-container-lowest/50 text-on-surface-variant hover:bg-surface-container-lowest/80 transition-all text-center" type="button">
+              Low
+            </button>
+<button class="flex-1 py-1.5 rounded-full font-label-prominent text-label-prominent bg-gradient-to-r from-[#f59e0b] to-[#facc15] text-[#121d26] shadow-sm font-bold text-center" type="button">
+              Medium
+            </button>
+<button class="flex-1 py-1.5 rounded-full font-label-prominent text-label-prominent bg-surface-container-lowest/50 text-on-surface-variant hover:bg-surface-container-lowest/80 transition-all text-center" type="button">
+              High
+            </button>
+</div>
+</div>
+</div>
+<div class="mt-5">
+<button class="w-full py-3 px-6 rounded-full bg-gradient-to-r from-primary-container to-[#facc15] hover:brightness-105 active:scale-[0.99] text-on-primary-fixed font-headline-sm text-headline-sm font-bold shadow-[0_8px_24px_-4px_rgba(245,158,11,0.45)] transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+<span>Restore Image</span>
+</button>
+</div>
+</div>
+<!-- 4. Comparison Canvas Bento Card (Cols 1-8) -->
+<div class="col-span-12 lg:col-span-8 rounded-lg bg-surface-container-lowest/40 backdrop-blur-2xl p-space-lg flex flex-col shadow-md relative">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="font-title-card text-title-card text-on-surface">Multi-Pass Synthesis Verification</span>
+<span class="font-data-tabular text-data-tabular px-2.5 py-0.5 rounded-full bg-surface-container-lowest/60 text-secondary">Split View Active</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest/60 hover:bg-surface-container-lowest flex items-center justify-center text-on-surface transition-all shadow-sm" title="Zoom in" type="button">
+<span class="material-symbols-outlined text-[18px]">zoom_in</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest/60 hover:bg-surface-container-lowest flex items-center justify-center text-on-surface transition-all shadow-sm" title="Fullscreen" type="button">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Comparative Frames Container -->
+<div class="relative w-full aspect-[16/9] min-h-[300px] rounded-lg overflow-hidden grid grid-cols-2 gap-3 p-1.5 bg-surface-container-lowest/30 shadow-inner">
+<!-- Left: Corrupted Image -->
+<div class="relative w-full h-full rounded-[20px] overflow-hidden group shadow-sm">
+<img class="w-full h-full object-cover filter blur-[2px] contrast-75 brightness-95" data-alt="Degraded, heavily blurred and grainy image of a cute golden retriever puppy with simulated gaussian noise, pixelated color dispersion artifacts, low contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAOFdWaM_L_JbA-MC05AE4G1tY1uNovoVs-CvZ5E37Z57iqSESszpm5uK4-4BMwviYrXOhj2cCdhWkbLSCs99UaeeGqd86UERG1JEO3RYl5DFLfocjC7c0bGRvqjQ7-cuPGT5slzXqVJaH7aNCyBX9-8z3b8vf4syZphWfvoeNO4lHuYTkPlFIvEkc8bmyELyz1Oo2HcyOTvBQlDbKrALu50xRn40iuoPAbwoUsQ8NZquGtUL5NZjoiw"/>
+<div class="absolute inset-0 bg-secondary/10 pointer-events-none mix-blend-color-burn"></div>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/75 backdrop-blur-md shadow-sm flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label-caption text-label-caption text-on-surface font-semibold">Corrupted (σ=25)</span>
+</div>
+<div class="absolute bottom-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/60 backdrop-blur-sm text-on-surface-variant font-data-tabular text-data-tabular">
+            Input: Raw Degraded
+          </div>
+</div>
+<!-- Right: Restored Output -->
+<div class="relative w-full h-full rounded-[20px] overflow-hidden group shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Ultra crisp, hyper-detailed high resolution 4K macro restoration of a golden retriever puppy, every whisker and fur fiber impeccably sharp, vibrant amber eyes, warm cinematic natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTCbC-kUWzkT1bKN8VqbQb4vTPJKNrMeheE12xN0_xN3WIhtVK0Y3WXUKuBkvATdqc_S0eeXXM-cKsHAW88V41PQvOsrt69RuNQUg2oCHYZbS-IBrGKn3z3pfa6dgSEfKRZFk7G5ObYeoRtuPV1TJaklqpPymBxxK4OlCbwuM8b_-NW75-CrhdCMqOtj8_WvnGBdjmJDqD5fd9MG1hfp7n43PcHKEh0XsIu6H1ZUUcx9MY4ATcuyejrQ"/>
+<div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-surface-container-lowest/75 backdrop-blur-md shadow-sm flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-caption text-label-caption text-on-surface font-semibold">Restored Output • 4K</span>
+</div>
+<div class="absolute bottom-3 right-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/60 backdrop-blur-sm text-on-surface-variant font-data-tabular text-data-tabular">
+            Swinv2-Enhanced
+          </div>
+</div>
+<!-- Interactive Floating Center Divider Pill -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 px-3.5 py-1.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-xl shadow-lg flex items-center gap-2 cursor-ew-resize hover:scale-105 transition-all select-none">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">chevron_left</span>
+<span class="font-label-prominent text-label-prominent text-on-surface whitespace-nowrap">Compare before / after</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- 5. Error Map & Quality Metrics Bento Card (Cols 9-12) -->
+<div class="col-span-12 lg:col-span-4 rounded-lg bg-surface-container-lowest/40 backdrop-blur-2xl p-space-lg flex flex-col justify-between shadow-md">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-title-card text-title-card text-on-surface">Error Map &amp; Metrics</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">analytics</span>
+</div>
+<!-- Gauge & Numeric Metrics Duo -->
+<div class="flex items-center justify-around py-3 bg-surface-container-lowest/30 rounded-[20px] shadow-inner mb-4">
+<!-- Big SVG Gauge Ring -->
+<div class="relative w-28 h-28 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<circle class="stroke-surface-container-highest/60" cx="50" cy="50" fill="none" r="40" stroke-width="8"></circle>
+<circle class="transition-all duration-1000 ease-out" cx="50" cy="50" fill="none" r="40" stroke="url(#amberGradient)" stroke-dasharray="251.2" stroke-dashoffset="52" stroke-linecap="round" stroke-width="8"></circle>
+<defs>
+<lineargradient id="amberGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#f59e0b"></stop>
+<stop offset="100%" stop-color="#facc15"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-data-metric text-data-metric text-on-surface font-bold leading-none">24.7</span>
+<span class="font-label-caption text-label-caption text-on-surface-variant mt-0.5">dB PSNR</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="px-3 py-1.5 rounded-full bg-surface-container-lowest/60 shadow-sm">
+<span class="font-label-caption text-label-caption text-on-surface-variant block">PSNR Gain</span>
+<span class="font-data-tabular text-data-tabular text-tertiary font-bold">+8.4 dB</span>
+</div>
+<div class="px-3 py-1.5 rounded-full bg-surface-container-lowest/60 shadow-sm">
+<span class="font-label-caption text-label-caption text-on-surface-variant block">SSIM Score</span>
+<span class="font-data-tabular text-data-tabular text-secondary font-bold">0.962</span>
+</div>
+</div>
+</div>
+<!-- Heatmap Residual Visual Bar -->
+<div class="flex flex-col gap-1.5 mt-2">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caption text-label-caption">Residual MSE Dispersion</span>
+<span class="font-data-tabular text-data-tabular">0.012 Avg</span>
+</div>
+<div class="h-3 w-full rounded-full bg-gradient-to-r from-secondary via-tertiary to-error shadow-inner"></div>
+<div class="flex items-center justify-between font-label-caption text-label-caption text-on-surface-variant px-0.5">
+<span>0.00 MSE</span>
+<span>0.22</span>
+<span>0.45 MSE</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caption text-label-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-tertiary">check_circle</span>
+          Tolerance bound within specs
+        </span>
+<button class="font-data-tabular text-data-tabular text-secondary hover:underline" type="button">
+          Export Log
+        </button>
+</div>
+</div>
+<!-- 6. Quick Status Telemetry Banner (Cols 1-12) -->
+<div class="col-span-12 rounded-full bg-surface-container-lowest/40 backdrop-blur-2xl px-space-lg py-2.5 flex flex-wrap items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px] text-primary-container">speed</span>
+<span class="font-label-prominent text-label-prominent text-on-surface">Realtime Diagnostics:</span>
+<span class="font-data-tabular text-data-tabular text-on-surface-variant">
+          Pipeline Latency: <strong class="text-on-surface">17ms</strong>
+</span>
+<span class="text-outline-variant">•</span>
+<span class="font-data-tabular text-data-tabular text-on-surface-variant">
+          Peak Memory: <strong class="text-on-surface">2.1 GB</strong>
+</span>
+<span class="text-outline-variant">•</span>
+<span class="font-data-tabular text-data-tabular text-on-surface-variant">
+          Residual Loss: <strong class="text-on-surface">0.0034</strong>
+</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-caption text-label-caption text-on-surface-variant font-medium">Cluster Healthy • Node us-east-4a</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple clock heartbeat simulation
+  setInterval(() => {
+    const clockEl = document.getElementById('live-clock');
+    if (clockEl) {
+      const d = new Date();
+      clockEl.textContent = d.toLocaleTimeString('en-US');
+    }
+  }, 1000);
+</script></main></div><footer class="w-full h-14 shrink-0 flex items-center justify-between px-2 pt-2"><nav class="flex items-center gap-1.5 p-1 rounded-full bg-surface-container-lowest/45 backdrop-blur-xl border border-surface-container-lowest/70 shadow-sm" data-active-classes="bg-surface-container-lowest text-on-surface font-title-card shadow-sm"><a aria-current="page" class="px-4 py-2 rounded-full transition-all bg-surface-container-lowest text-on-surface font-title-card shadow-sm" data-path="universal-restoration" href="#">Universal Restoration</a><a class="px-4 py-2 rounded-full font-label-prominent text-label-prominent text-on-surface-variant hover:text-on-surface transition-all" data-path="hard-routed-restoration" href="#">Hard-Routed</a><a class="px-4 py-2 rounded-full font-label-prominent text-label-prominent text-on-surface-variant hover:text-on-surface transition-all" data-path="soft-mixture-of-experts" href="#">Mixture of Experts</a><a class="px-4 py-2 rounded-full font-label-prominent text-label-prominent text-on-surface-variant hover:text-on-surface transition-all" data-path="face-to-sketch" href="#">Face-to-Sketch</a></nav><button class="w-11 h-11 rounded-full bg-surface-container-lowest/60 backdrop-blur-xl border border-surface-container-lowest/80 flex items-center justify-center text-on-surface hover:bg-surface-container-lowest hover:scale-105 transition-all shadow-sm" type="button"><span class="material-symbols-outlined text-[22px]">add</span></button></footer></div></body></html>
