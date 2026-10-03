@@ -1,0 +1,50 @@
+{
+  "classifier": {
+    "path": "C:\\Users\\RUHAN\\Downloads\\gen-ai\\models\\onnx\\task2_classifier.onnx",
+    "opset": 17,
+    "size_mb": 4.7,
+    "max_abs_err": {
+      "1": 9.5367431640625e-07,
+      "4": 4.76837158203125e-06,
+      "8": 4.76837158203125e-06
+    },
+    "pytorch_ms": 14.406,
+    "onnxruntime_ms": 8.348
+  },
+  "salt": {
+    "path": "C:\\Users\\RUHAN\\Downloads\\gen-ai\\models\\onnx\\task2_specialist_salt.onnx",
+    "opset": 17,
+    "size_mb": 2.08,
+    "max_abs_err": {
+      "1": 1.7285346984863281e-06,
+      "4": 1.817941665649414e-06,
+      "8": 2.1457672119140625e-06
+    },
+    "pytorch_ms": 14.193,
+    "onnxruntime_ms": 5.923
+  },
+  "blur": {
+    "path": "C:\\Users\\RUHAN\\Downloads\\gen-ai\\models\\onnx\\task2_specialist_blur.onnx",
+    "opset": 17,
+    "size_mb": 2.08,
+    "max_abs_err": {
+      "1": 1.2218952178955078e-06,
+      "4": 1.2516975402832031e-06,
+      "8": 2.086162567138672e-06
+    },
+    "pytorch_ms": 13.903,
+    "onnxruntime_ms": 6.331
+  },
+  "occlusion": {
+    "path": "C:\\Users\\RUHAN\\Downloads\\gen-ai\\models\\onnx\\task2_specialist_occlusion.onnx",
+    "opset": 17,
+    "size_mb": 2.08,
+    "max_abs_err": {
+      "1": 1.3709068298339844e-06,
+      "4": 2.5033950805664062e-06,
+      "8": 2.7120113372802734e-06
+    },
+    "pytorch_ms": 14.915,
+    "onnxruntime_ms": 6.184
+  }
+}

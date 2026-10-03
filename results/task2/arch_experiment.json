@@ -1,0 +1,30 @@
+[
+  {
+    "model": "custom-small",
+    "params": 72564,
+    "macro_f1": 0.9972826086956521,
+    "accuracy": 0.9972826086956522,
+    "latency_ms_gpu_b1": 1.656
+  },
+  {
+    "model": "custom-medium",
+    "params": 287972,
+    "macro_f1": 0.9972826086956521,
+    "accuracy": 0.9972826086956522,
+    "latency_ms_gpu_b1": 1.678
+  },
+  {
+    "model": "custom-large",
+    "params": 1174244,
+    "macro_f1": 0.9945650568601389,
+    "accuracy": 0.9945652173913043,
+    "latency_ms_gpu_b1": 2.116
+  },
+  {
+    "model": "resnet18-pretrained",
+    "params": 11178564,
+    "macro_f1": 0.9986412943148505,
+    "accuracy": 0.998641304347826,
+    "latency_ms_gpu_b1": 4.75
+  }
+]

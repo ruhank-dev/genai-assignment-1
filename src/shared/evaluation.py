@@ -58,4 +58,7 @@ def aggregate(r: dict) -> dict:
         for s in ((0,) if i == 0 else (1, 2, 3)):
             per_s[f"{t}/{SEV_NAME[s]}"] = {"params": SEV_PARAM[t][s], **m((r["label"] == i) & (r["sev"] == s))}
     return {"per_corruption": per_c, "per_severity": per_s, "overall": m(np.ones(len(r["psnr"]), bool)),
+            # clean + identity bypass is exact (PSNR capped at 80 dB) and inflates the overall mean: also report
+            # the mean over the 9 corrupted variants only.
+            "overall_corrupted": m(r["label"] != 0),
             "ms_per_sample": r["ms_per_sample"]}

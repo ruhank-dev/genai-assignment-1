@@ -1,0 +1,14 @@
+{
+  "best_value": 0.3296424001455307,
+  "best_params": {
+    "learning_rate": 0.0005611516415334506,
+    "bottleneck_dim": 64,
+    "channel_config": "shallow",
+    "batch_size": 16,
+    "alpha": 0.5
+  },
+  "best_trial": 0,
+  "n_trials": 16,
+  "n_complete": 8,
+  "n_pruned": 8
+}

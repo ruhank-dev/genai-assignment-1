@@ -1,0 +1,50 @@
+{
+  "n_misrouted": 127,
+  "n_total": 36690,
+  "cases": [
+    {
+      "manifest_idx": 11430,
+      "image_idx": 1143,
+      "true": "clean",
+      "routed_to": "occlusion",
+      "severity": 0,
+      "type": "clean over-processed by occlusion specialist",
+      "psnr_predicted": 11.195059776306152,
+      "psnr_oracle": 80.0,
+      "n_such_errors_in_test": 34
+    },
+    {
+      "manifest_idx": 4640,
+      "image_idx": 464,
+      "true": "clean",
+      "routed_to": "blur",
+      "severity": 0,
+      "type": "clean over-processed by blur specialist",
+      "psnr_predicted": 17.13470458984375,
+      "psnr_oracle": 80.0,
+      "n_such_errors_in_test": 80
+    },
+    {
+      "manifest_idx": 19267,
+      "image_idx": 1926,
+      "true": "occlusion",
+      "routed_to": "blur",
+      "severity": 1,
+      "type": "occlusion -> blur specialist",
+      "psnr_predicted": 17.319385528564453,
+      "psnr_oracle": 28.237445831298828,
+      "n_such_errors_in_test": 2
+    },
+    {
+      "manifest_idx": 1477,
+      "image_idx": 147,
+      "true": "occlusion",
+      "routed_to": "clean",
+      "severity": 1,
+      "type": "false clean bypass",
+      "psnr_predicted": 23.510894775390625,
+      "psnr_oracle": 24.481985092163086,
+      "n_such_errors_in_test": 10
+    }
+  ]
+}

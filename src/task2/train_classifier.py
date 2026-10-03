@@ -14,6 +14,16 @@ from src.shared.datasets.corrupted import BalancedBatchSampler, CorruptedPets
 from src.shared.tracking import ExperimentTracker
 from src.task2.classifier import CHANNELS, CLS_NAMES, CorruptionClassifier
 
+def build_classifier(cfg: dict) -> torch.nn.Module:
+    """cfg['arch']=='resnet18' only for the architecture comparison experiment (Alternative 3)."""
+    if cfg.get("arch") == "resnet18":
+        from torchvision.models import ResNet18_Weights, resnet18
+        m = resnet18(weights=ResNet18_Weights.IMAGENET1K_V1)
+        m.fc = torch.nn.Linear(512, 4)
+        return m
+    return CorruptionClassifier(CHANNELS[cfg["channel_config"]], cfg["dropout"])
+
+
 BASELINE = dict(lr=1e-3, batch_size=32, channel_config="medium", dropout=0.2, weight_decay=1e-4)
 
 
@@ -42,7 +52,7 @@ def train_classifier(cfg: dict, epochs: int, ckpt_path, experiment: str, run_nam
     tr = DataLoader(ds, batch_sampler=BalancedBatchSampler(n_img, cfg["batch_size"], settings.seed),
                     num_workers=nw, pin_memory=True, persistent_workers=True)
     va = DataLoader(CorruptedPets("val"), 128, num_workers=nw)
-    model = CorruptionClassifier(CHANNELS[cfg["channel_config"]], cfg["dropout"]).to(dev)
+    model = build_classifier(cfg).to(dev)
     opt = torch.optim.AdamW(model.parameters(), lr=cfg["lr"], weight_decay=cfg["weight_decay"])
     sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, epochs)
     tracker = ExperimentTracker()
