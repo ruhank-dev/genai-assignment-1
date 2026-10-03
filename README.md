@@ -73,7 +73,7 @@ uv run python -m src.task4.evaluate && uv run python -m src.task4.export_onnx
 uv run mlflow ui --backend-store-uri sqlite:///mlflow.db
 ```
 
-Checkpoints go to `checkpoints/` (git-ignored; not included — the ONNX exports in `models/onnx/` are what the app needs). Optuna studies live in `optuna/optuna_studies.db`; per-study trial tables and best parameters are exported to `results/task*/`.
+Checkpoints go to `checkpoints/` (git-ignored; not included — the ONNX exports in `models/onnx/` are what the app needs). Optuna studies live in `optuna/optuna_studies.db` (committed, 240 KB); per-study trial tables and best parameters are exported to `results/task*/`.
 
 ## 4. Tests
 

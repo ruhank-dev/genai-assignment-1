@@ -1,6 +1,5 @@
 data/
 checkpoints/
-optuna/*.db
 .env
 .env.local
 __pycache__/
