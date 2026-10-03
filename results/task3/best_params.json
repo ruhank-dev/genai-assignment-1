@@ -1,0 +1,22 @@
+{
+  "value": 0.8641796708106995,
+  "trial": 8,
+  "params": {
+    "fine_tune_lr": 1.7541893487450798e-05,
+    "temperature": 2.526366859545224,
+    "lambda_ce": 0.011439974749291277,
+    "lambda_balance": 0.06586289317583113,
+    "reconstruction_alpha": 0.6293899908000085
+  },
+  "config": {
+    "tau": 2.526366859545224,
+    "alpha": 0.6293899908000085,
+    "lam_ce": 0.011439974749291277,
+    "lam_bal": 0.06586289317583113,
+    "fine_tune_lr": 1.7541893487450798e-05,
+    "warmup_lr": 0.001,
+    "batch_size": 32,
+    "balance": "l2",
+    "head_type": "linear"
+  }
+}

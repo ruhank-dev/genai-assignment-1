@@ -1,0 +1,14 @@
+{
+  "best_value": 0.8641796708106995,
+  "best_params": {
+    "fine_tune_lr": 1.7541893487450798e-05,
+    "temperature": 2.526366859545224,
+    "lambda_ce": 0.011439974749291277,
+    "lambda_balance": 0.06586289317583113,
+    "reconstruction_alpha": 0.6293899908000085
+  },
+  "best_trial": 8,
+  "n_trials": 10,
+  "n_complete": 7,
+  "n_pruned": 3
+}

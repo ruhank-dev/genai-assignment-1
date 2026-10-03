@@ -48,12 +48,12 @@ class CorruptedPets(Dataset):
 class BalancedBatchSampler(Sampler):
     """Each batch has batch_size/4 images per corruption class (exactly balanced)."""
 
-    def __init__(self, n_images: int, batch_size: int, seed: int = 0):
+    def __init__(self, n_images: int, batch_size: int, seed: int = 0, epoch_batches: int | None = None):
         assert batch_size % 4 == 0
-        self.n, self.bs, self.seed, self.epoch = n_images, batch_size, seed, 0
+        self.n, self.bs, self.seed, self.epoch, self.eb = n_images, batch_size, seed, 0, epoch_batches
 
     def __len__(self) -> int:
-        return self.n // (self.bs // 4)
+        return self.eb or self.n // (self.bs // 4)
 
     def __iter__(self):
         g = torch.Generator().manual_seed(self.seed + self.epoch)

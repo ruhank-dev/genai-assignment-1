@@ -1,0 +1,12 @@
+{
+  "path": "C:\\Users\\RUHAN\\Downloads\\gen-ai\\models\\onnx\\task3_soft_moe.onnx",
+  "opset": 17,
+  "size_mb": 10.94,
+  "max_abs_err": {
+    "1": 1.430511474609375e-06,
+    "4": 1.4901161193847656e-06,
+    "8": 1.519918441772461e-06
+  },
+  "pytorch_ms": 58.668,
+  "onnxruntime_ms": 28.72
+}
