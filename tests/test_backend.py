@@ -122,10 +122,13 @@ def test_upload_validation(client, pet_img):
 
 def test_missing_model_gives_503(tmp_path, pet_img, monkeypatch):
     monkeypatch.setattr(settings, "model_dir", tmp_path)
+    old = getattr(app.state, "registry", None)  # the lifespan below replaces the shared app's registry
     with TestClient(app) as c:
         assert c.get("/health").json()["status"] == "degraded"
         r = post(c, "/api/v1/restore/soft-moe", pet_img)
         assert r.status_code == 503 and "task3_soft_moe.onnx" in r.json()["detail"]
+    if old is not None:
+        app.state.registry = old
 
 
 def test_numpy_corruptions_match_training_implementation():
@@ -142,3 +145,41 @@ def test_numpy_corruptions_match_training_implementation():
     for (n, f) in corruption.OCC_LEVELS:
         cov = np.mean([(corruption.occlusion(np.ones((3, 128, 128), np.float32), n, f, random.Random(i))[0] == 0).mean() for i in range(30)])
         assert abs(cov - f) < 0.03
+
+
+def test_numpy_metrics_match_training_metrics():
+    import torch
+    from src.app.backend.services.metrics import psnr as np_psnr, ssim as np_ssim
+    from src.shared.metrics import psnr_per_image, ssim_per_image
+    rng = np.random.default_rng(0)
+    a = rng.random((3, 128, 128), dtype=np.float32)
+    b = np.clip(a + rng.normal(0, 0.05, a.shape), 0, 1).astype(np.float32)
+    ta, tb = torch.from_numpy(a)[None], torch.from_numpy(b)[None]
+    assert abs(np_psnr(b, a) - float(psnr_per_image(ta, tb))) < 1e-3
+    assert abs(np_ssim(b, a) - float(ssim_per_image(ta, tb))) < 1e-4
+
+
+def test_every_endpoint_returns_a_heat_map_and_metrics(client, pet_img):
+    x = to_array(Image.fromarray(pet_img))
+    bad, _ = corruption.apply(x, "salt_and_pepper", 3, seed=2)
+    files = {"image": ("c.png", png_bytes(as_u8(bad)), "image/png"), "reference": ("r.png", png_bytes(pet_img), "image/png")}
+    for url in ("/api/v1/restore/hard-routed", "/api/v1/restore/soft-moe"):
+        j = client.post(url, files=files).json()
+        assert j["error_reference"] == "clean_reference" and decode(j["error_map"]).size == (128, 128)
+        assert j["input_metrics"]["psnr"] < j["metrics"]["psnr"]  # restoration beats the corrupted input vs. the clean reference
+        j2 = post(client, url, as_u8(bad)).json()  # without a reference: compared with the input
+        assert j2["error_reference"] == "input" and j2["input_metrics"] is None
+    u = post(client, "/api/v1/restore/universal", pet_img, apply_corruption="true", corruption_type="salt_and_pepper", severity="3").json()
+    assert u["input_metrics"]["psnr"] < u["metrics"]["psnr"] and 0 < u["metrics"]["ssim"] <= 1
+    s = post(client, "/api/v1/sketch/generate", pet_img, style="2").json()
+    assert s["error_reference"] == "stroke_intensity" and decode(s["error_map"]).size == (128, 128)
+    assert 0 <= s["stats"]["mean_ink"] <= 1 and 0 <= s["stats"]["dark_fraction"] <= 1
+
+
+def test_forced_identity_bypass(client, pet_img):
+    x = to_array(Image.fromarray(pet_img))
+    bad, _ = corruption.apply(x, "gaussian_blur", 3, seed=1)
+    j = post(client, "/api/v1/restore/hard-routed", as_u8(bad), force_bypass="true").json()
+    assert j["forced_bypass"] and j["selected_expert"] == "Identity Bypass" and j["inference_time"]["specialist_ms"] == 0.0
+    assert j["predicted_class"] == "gaussian_blur"  # classifier still reports its own opinion
+    assert decode(j["restored_image"]).tobytes() == decode(j["original_image"]).tobytes()

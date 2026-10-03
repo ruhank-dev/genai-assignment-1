@@ -8,14 +8,16 @@ import UniversalRestoration from "./pages/UniversalRestoration";
 export default function App() {
   return (
     <Shell>
-      <Routes>
-        <Route path="/" element={<Navigate to="/universal" replace />} />
-        <Route path="/universal" element={<UniversalRestoration />} />
-        <Route path="/hard-routed" element={<HardRoutedRestoration />} />
-        <Route path="/soft-moe" element={<SoftMoERestoration />} />
-        <Route path="/face-to-sketch" element={<FaceToSketch />} />
-        <Route path="*" element={<Navigate to="/universal" replace />} />
-      </Routes>
+      {() => (
+        <Routes>
+          <Route path="/" element={<Navigate to="/universal" replace />} />
+          <Route path="/universal" element={<UniversalRestoration />} />
+          <Route path="/hard-routed" element={<HardRoutedRestoration />} />
+          <Route path="/soft-moe" element={<SoftMoERestoration />} />
+          <Route path="/face-to-sketch" element={<FaceToSketch />} />
+          <Route path="*" element={<Navigate to="/universal" replace />} />
+        </Routes>
+      )}
     </Shell>
   );
 }

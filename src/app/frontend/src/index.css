@@ -2,33 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root { min-height: 100%; }
-body {
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-  color: #121d26;
-  background: linear-gradient(135deg, #ffd8be 0%, #fff4cc 48%, #cfd8ff 100%);
-  background-attachment: fixed;
-}
+html, body { margin: 0; padding: 0; }
+body { overscroll-behavior: none; }
+::-webkit-scrollbar { display: none; }
+main > :first-child { margin-top: 0; }
 
-@layer components {
-  /* frosted glass surface used by every card */
-  .glass {
-    @apply rounded-glass border border-white/70 bg-ink-900 shadow-glass;
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-  }
-  .glass-frame {
-    @apply rounded-[2.5rem] border border-white/70 bg-white/25 shadow-glass;
-    backdrop-filter: blur(8px);
-  }
-  .glass-pill {
-    @apply rounded-full border border-white/70 bg-white/55 shadow-sm;
-    backdrop-filter: blur(16px);
-  }
-  .btn-primary {
-    @apply rounded-full bg-gradient-to-r from-accent to-accent-soft px-5 py-2.5 text-sm font-bold text-ink-950
-      shadow-[0_8px_24px_-4px_rgba(245,158,11,0.45)] transition hover:brightness-105 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-40;
-  }
-}
+/* Dark theme (header toggle): invert the light glass design; images/video are inverted back so photos keep their colours. */
+html.dark #app-root { filter: invert(0.9) hue-rotate(180deg); }
+html.dark #app-root img, html.dark #app-root video { filter: invert(1) hue-rotate(180deg); }
+html.dark body { background: #0b1020; }
 
-h1, h2, h3, .font-display { font-family: "Plus Jakarta Sans", Inter, sans-serif; }
+input[type="range"] { accent-color: #f59e0b; }
+.material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24; user-select: none; }

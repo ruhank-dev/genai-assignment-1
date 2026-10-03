@@ -1,92 +1,82 @@
-import { useState } from "react";
-import CorruptionControls, { SEVERITIES } from "../components/task1/CorruptionControls";
-import ErrorMapViewer from "../components/task1/ErrorMapViewer";
-import SampleGallery from "../components/task1/SampleGallery";
-import ErrorAlert from "../components/shared/ErrorAlert";
-import ImagePanel from "../components/shared/ImagePanel";
-import ImageUploader from "../components/shared/ImageUploader";
-import LoadingSpinner from "../components/shared/LoadingSpinner";
-import MetricBadge from "../components/shared/MetricBadge";
+import { useCallback, useEffect, useState } from "react";
+import CorruptionCard, { SEVERITY_PARAMS } from "../components/input/CorruptionCard";
+import SampleCard from "../components/input/SampleCard";
+import DiagnosticsBar from "../components/ui/DiagnosticsBar";
+import ErrorHeatmapCard from "../components/ui/ErrorHeatmapCard";
+import StatusCard from "../components/ui/StatusCard";
+import SplitView from "../components/universal/SplitView";
 import { useInference } from "../hooks/useInference";
+import { useWorkspaceInput } from "../hooks/useWorkspaceInput";
 import { api } from "../services/api";
-import type { CorruptionKind, UniversalRestoreResponse } from "../types";
-
-type Mode = "upload" | "studio";
+import type { UniversalRestoreResponse } from "../types";
 
 export default function UniversalRestoration() {
-  const [mode, setMode] = useState<Mode>("studio");
-  const [file, setFile] = useState<File | null>(null);
-  const [kind, setKind] = useState<CorruptionKind>("salt_and_pepper");
-  const [severity, setSeverity] = useState(2);
-  const inf = useInference<UniversalRestoreResponse>(api.restoreUniversal);
+  const input = useWorkspaceInput();
+  const call = useCallback((f: FormData) => api.restoreUniversal(f), []);
+  const inf = useInference<UniversalRestoreResponse>(call);
+  const [preview, setPreview] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!input.file) return setPreview(null);
+    const url = URL.createObjectURL(input.file);
+    setPreview(url);
+    return () => URL.revokeObjectURL(url);
+  }, [input.file]);
 
   const submit = () => {
-    if (!file) return;
+    if (!input.file) return;
     const form = new FormData();
-    form.append("image", file);
-    if (mode === "studio") {
+    form.append("image", input.file);
+    if (!input.asIs) {
       form.append("apply_corruption", "true");
-      form.append("corruption_type", kind);
-      form.append("severity", String(severity));
+      form.append("corruption_type", input.kind);
+      form.append("severity", String(input.severity));
     }
     void inf.run(form);
   };
 
   const r = inf.data;
   const c = r?.corruption_applied;
+  const label = c ? `Corrupted (${SEVERITY_PARAMS[input.kind][Number(c.severity) - 1]})` : r ? "Input (as uploaded)" : "Selected image";
   return (
-    <div className="mx-auto max-w-5xl space-y-6">
-      <header>
-        <h1 className="text-2xl font-bold">Universal Restoration</h1>
-        <p className="text-sm text-slate-500">One autoencoder restores clean, noisy, blurred and occluded images without being told which.</p>
-      </header>
-
-      <div className="flex gap-2">
-        {(["studio", "upload"] as Mode[]).map((m) => (
-          <button
-            key={m}
-            onClick={() => (setMode(m), setFile(null))}
-            className={`rounded-lg px-4 py-2 text-sm ring-1 ${mode === m ? "bg-amber-300/60 ring-amber-400" : "ring-ink-700"}`}
-          >
-            {m === "studio" ? "Corruption studio (clean sample)" : "Upload a corrupted image"}
-          </button>
-        ))}
-      </div>
-
-      <section className="grid gap-5 lg:grid-cols-2">
-        <div className="space-y-3">
-          {mode === "studio" && <SampleGallery onPick={(f) => setFile(f)} />}
-          <ImageUploader file={file} onFile={setFile} label={mode === "studio" ? "…or upload your own clean image" : "Upload an already corrupted image"} />
+    <div className="flex flex-col w-full gap-space-lg pb-4">
+      {inf.error && (
+        <div role="alert" className="rounded-full bg-error-container/70 backdrop-blur-xl text-on-error-container px-6 py-2 flex items-center justify-between shadow-sm">
+          <span className="font-body-sm text-body-sm font-medium">{inf.error}</span>
+          <button onClick={inf.dismissError} className="font-label-caption text-label-caption underline" type="button">Dismiss</button>
         </div>
-        {mode === "studio" && (
-          <div className="glass p-4">
-            <div className="mb-3 text-sm font-semibold">Runtime corruption</div>
-            <CorruptionControls kind={kind} severity={severity} onChange={(k, s) => (setKind(k), setSeverity(s))} />
-          </div>
-        )}
-      </section>
-
-      <button disabled={!file || inf.loading} onClick={submit} className="btn-primary">
-        Restore Image
-      </button>
-
-      {inf.loading && <LoadingSpinner />}
-      {inf.error && <ErrorAlert message={inf.error} onDismiss={inf.dismissError} onRetry={submit} />}
-
-      {r && (
-        <section className="space-y-4">
-          <div className="flex flex-wrap gap-2">
-            <MetricBadge label="Inference" value={`${r.inference_time_ms.toFixed(1)} ms`} />
-            <MetricBadge
-              label="Corruption"
-              tone="amber"
-              value={c ? `${String(c.type).replace(/_/g, " ")} · ${SEVERITIES[c.type as CorruptionKind][Number(c.severity) - 1]}` : "none applied (uploaded as-is)"}
-            />
-          </div>
-          <ImagePanel items={[{ label: "Input to model", src: r.corrupted_image }, { label: "Restored", src: r.restored_image }]} />
-          <ErrorMapViewer src={r.error_map} reference={r.error_reference} />
-        </section>
       )}
+      <div className="grid grid-cols-12 gap-gutter w-full">
+        <StatusCard pipeline="Universal conv. autoencoder" inferenceMs={r?.inference_time_ms ?? null} />
+        <SampleCard input={input} />
+        <CorruptionCard input={input} action={{ label: "Restore Image", icon: "auto_awesome", busy: inf.loading, onClick: submit }} />
+        <SplitView
+          title="Restoration Verification"
+          before={r?.corrupted_image ?? null}
+          after={r?.restored_image ?? null}
+          placeholder={preview}
+          beforeLabel={label}
+          afterLabel="Restored Output"
+          beforeNote="Input to model"
+          afterNote="Universal AE · 128×128"
+        />
+        <ErrorHeatmapCard
+          className="col-span-12 lg:col-span-4"
+          mode="error"
+          map={r?.error_map ?? null}
+          metrics={r?.metrics}
+          inputMetrics={r?.input_metrics}
+          reference={r ? (r.error_reference === "clean_upload" ? "Error measured against the clean image" : "Error measured against the uploaded input") : ""}
+          exportData={r ? { metrics: r.metrics, input_metrics: r.input_metrics, reference: r.error_reference, corruption: r.corruption_applied } : undefined}
+        />
+        <DiagnosticsBar
+          items={[
+            { label: "Pipeline Latency", value: r ? `${r.inference_time_ms.toFixed(1)} ms` : "—" },
+            { label: "Residual L1", value: r ? r.metrics.l1.toFixed(4) : "—" },
+            { label: "Model I/O", value: "128×128 RGB" },
+          ]}
+        />
+      </div>
     </div>
   );
 }

@@ -46,18 +46,19 @@ def universal(reg: ModelRegistry, x: np.ndarray) -> tuple[np.ndarray, float]:
     return out[0][0], ms
 
 
-def hard_route(reg: ModelRegistry, x: np.ndarray) -> dict:
-    """Stage 1 classifier -> argmax -> Stage 2 specialist (or exact identity bypass, 0 ms)."""
+def hard_route(reg: ModelRegistry, x: np.ndarray, force_bypass: bool = False) -> dict:
+    """Stage 1 classifier -> argmax -> Stage 2 specialist (or exact identity bypass, 0 ms).
+    force_bypass overrides the decision with the identity branch (the probabilities are still reported)."""
     (logits,), cls_ms = reg.run("classifier", {"input": x[None]})
     z = logits[0] - logits[0].max()
     probs = np.exp(z) / np.exp(z).sum()
-    r = int(probs.argmax())
+    r = 0 if force_bypass else int(probs.argmax())
     if r == 0:
         restored, spec_ms = x, 0.0
     else:
         out, spec_ms = reg.run(("salt", "blur", "occlusion")[r - 1], {"input": x[None]})
         restored = out[0][0]
-    return {"restored": restored, "probs": {c: float(p) for c, p in zip(CLASSES, probs)}, "predicted": CLASSES[r],
+    return {"restored": restored, "probs": {c: float(p) for c, p in zip(CLASSES, probs)}, "predicted": CLASSES[int(probs.argmax())],
             "expert": EXPERTS[r], "classifier_ms": cls_ms, "specialist_ms": spec_ms, "total_ms": cls_ms + spec_ms}
 
 

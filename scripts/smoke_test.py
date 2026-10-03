@@ -48,6 +48,7 @@ def main() -> int:
     check("soft-moe weights", abs(sum(w.values()) - 1) < 1e-5 and sm["dominant_expert"] == max(w, key=w.get), str({k: round(v, 3) for k, v in w.items()}))
     outs = [post("/api/v1/sketch/generate", style=str(s)).json() for s in (1, 2, 3)]
     check("sketch 3 styles", len({o["sketch_image"] for o in outs}) == 3, f"{outs[0]['inference_time_ms']:.1f} ms")
+    check("heat maps on all four endpoints", all(k["error_map"].startswith("data:image/png") for k in (r, hr, sm, outs[0])) and "stats" in outs[0])
     check("sketch image decodes", Image.open(io.BytesIO(png(outs[0]["sketch_image"]))).size == (128, 128))
     check("non-image -> 400", c.post("/api/v1/restore/soft-moe", files={"image": ("a.txt", b"hi", "text/plain")}).status_code == 400)
     big = io.BytesIO()

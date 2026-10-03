@@ -94,8 +94,8 @@ copy = {"setup/corruption_grid.png": "corruption_grid.png", "task1/visualization
         "task3/figures/routing_heatmap.png": "t3_heatmap.png", "task3/figures/severity_routing_trends.png": "t3_trends.png",
         "task3/figures/sharp_vs_distributed_examples.png": "t3_sharp_soft.png", "task3/figures/t2_failures_recovered_by_t3.png": "t3_recovery.png",
         "task4/style_comparison_grid.png": "t4_style_grid.png", "task4/sample_results_grid.png": "t4_samples.png",
-        "task4/failure_cases_analysis.png": "t4_failures.png", "app/1_universal.png": "app_universal.png", "app/3_soft_moe.png": "app_softmoe.png",
-        "app/4_face_to_sketch.png": "app_sketch.png"}
+        "task4/failure_cases_analysis.png": "t4_failures.png", "app/1_universal.png": "app_universal.png", "app/2_hard_routed_bottom.png": "app_hard.png", "app/3_soft_moe_bottom.png": "app_softmoe.png",
+        "app/4_face_to_sketch_bottom.png": "app_sketch.png"}
 for s, d in copy.items():  # compact JPEGs (max 1600 px wide) keep the PDF small
     im = Image.open(R / s).convert("RGB")
     im.thumbnail((1600, 1600))

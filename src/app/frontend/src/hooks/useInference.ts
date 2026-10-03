@@ -1,26 +1,26 @@
 import { useCallback, useState } from "react";
 
-export interface InferenceState<T> {
+export interface InferenceState<T, A> {
   data: T | null;
   loading: boolean;
   error: string | null;
-  run: (form: FormData) => Promise<void>;
+  run: (arg: A) => Promise<void>;
   reset: () => void;
   dismissError: () => void;
 }
 
-/** Wraps one API call with loading / error / result state (every async operation has all three). */
-export function useInference<T>(call: (form: FormData) => Promise<T>): InferenceState<T> {
+/** Wraps one async operation with loading / error / result state (every async operation has all three). */
+export function useInference<T, A = FormData>(call: (arg: A) => Promise<T>): InferenceState<T, A> {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const run = useCallback(
-    async (form: FormData) => {
+    async (arg: A) => {
       setLoading(true);
       setError(null);
       try {
-        setData(await call(form));
+        setData(await call(arg));
       } catch (e) {
         setData(null);
         setError(e instanceof Error ? e.message : "Unexpected error");

@@ -9,3 +9,10 @@ class HealthResponse(BaseModel):
     status: str
     models_loaded: dict[str, bool]
     providers: list[str]
+
+
+class Metrics(BaseModel):
+    psnr: float
+    ssim: float
+    mse: float
+    l1: float
