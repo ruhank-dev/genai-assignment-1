@@ -1,0 +1,20 @@
+# --- Stage 1: build the Python environment (inference-only deps, no PyTorch) ---
+FROM python:3.11-slim AS builder
+WORKDIR /build
+COPY requirements-backend.txt .
+RUN pip install --no-cache-dir --prefix=/install -r requirements-backend.txt
+
+# --- Stage 2: slim runtime ---
+FROM python:3.11-slim
+RUN apt-get update && apt-get install -y --no-install-recommends libgomp1 && rm -rf /var/lib/apt/lists/* \
+    && useradd --create-home --uid 1000 app
+COPY --from=builder /install /usr/local
+WORKDIR /app
+COPY src/__init__.py src/__init__.py
+COPY src/app/__init__.py src/app/__init__.py
+COPY src/app/backend src/app/backend
+# ONNX models are mounted at run time (docker-compose volume ./models/onnx -> /app/models/onnx), not baked in.
+RUN mkdir -p /app/models/onnx && chown -R app:app /app
+USER app
+EXPOSE 8000
+CMD ["uvicorn", "src.app.backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
