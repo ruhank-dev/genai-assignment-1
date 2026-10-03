@@ -13,7 +13,13 @@ export interface Metrics {
   l1: number;
 }
 
-export type AppliedCorruption = Record<string, string | number>;
+export type AppliedCorruption = Record<string, string | number | Record<string, string | number>[]>;
+
+export interface PipelineStep {
+  id: number;
+  kind: CorruptionKind;
+  severity: number;
+}
 
 export interface UniversalRestoreResponse {
   original_image: string;

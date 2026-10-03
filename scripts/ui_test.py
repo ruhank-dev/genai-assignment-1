@@ -60,6 +60,27 @@ with sync_playwright() as p:
 
     step("universal: sample + blur + restore, split view, compare slider, error heat map", universal)
 
+    def multi():
+        pg.get_by_role("switch", name="Use multiple corruptions").click()
+        pg.get_by_role("button", name="+ Add Corruption").click()
+        pg.get_by_role("button", name="+ Add Corruption").click()
+        pg.get_by_label("Corruption 1 type").select_option("gaussian_blur")
+        pg.get_by_label("Corruption 2 type").select_option("salt_and_pepper")
+        pg.get_by_label("Corruption 3 type").select_option("rectangular_occlusion")
+        pg.get_by_label("Corruption 3 severity Low").click()
+        pg.get_by_role("button", name="Remove corruption 2").click()  # remove -> blur then occlusion
+        pipe = pg.get_by_label("corruption pipeline")
+        expect(pipe).to_contain_text("Gaussian blur")
+        expect(pipe).to_contain_text("Occlusion")
+        expect(pipe).not_to_contain_text("Salt")
+        pg.get_by_role("button", name="Restore Image").click()
+        expect(pg.get_by_text("Gaussian blur (k=5, σ=1.5) → Occlusion (1 box · ~10%)").first).to_be_visible(timeout=15000)
+        pg.screenshot(path=str(OUT / "1b_universal_multi.png"))
+        pg.get_by_role("switch", name="Use multiple corruptions").click()  # back to single mode
+        expect(pg.get_by_role("button", name="Salt & Pepper")).to_be_visible()
+
+    step("universal: optional multi-corruption pipeline (add, remove, order, restore), toggle off restores single mode", multi)
+
     def hard():
         pg.get_by_role("link", name="Hard-Routed Restoration").first.click()
         sample(1).click()

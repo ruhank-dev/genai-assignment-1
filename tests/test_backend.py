@@ -70,6 +70,20 @@ def test_universal_uploaded_corrupted_image(client, pet_img):
     assert j["corruption_applied"] is None and j["error_reference"] == "input"
 
 
+def test_universal_multi_corruption_pipeline(client, pet_img):
+    import json
+    steps = [{"type": "gaussian_blur", "severity": 2}, {"type": "salt_and_pepper", "severity": 1}, {"type": "rectangular_occlusion", "severity": 1}]
+    r = post(client, "/api/v1/restore/universal", pet_img, apply_corruption="true", pipeline=json.dumps(steps), seed="5")
+    j = r.json()
+    assert r.status_code == 200 and j["corruption_applied"]["type"] == "pipeline"
+    assert [s["type"] for s in j["corruption_applied"]["steps"]] == [s["type"] for s in steps]
+    assert j["error_reference"] == "clean_upload" and decode(j["restored_image"]).size == (128, 128)
+    single = post(client, "/api/v1/restore/universal", pet_img, apply_corruption="true", corruption_type="gaussian_blur", severity="2", seed="5").json()
+    assert decode(j["corrupted_image"]).tobytes() != decode(single["corrupted_image"]).tobytes()  # extra steps change the input
+    for bad in ("not json", "[]", json.dumps([{"type": "nope", "severity": 1}]), json.dumps([{"type": "gaussian_blur", "severity": 9}])):
+        assert post(client, "/api/v1/restore/universal", pet_img, apply_corruption="true", pipeline=bad).status_code == 422
+
+
 def test_universal_bad_corruption_type(client, pet_img):
     assert post(client, "/api/v1/restore/universal", pet_img, apply_corruption="true", corruption_type="nope").status_code == 422
 

@@ -1,3 +1,4 @@
+import json
 from typing import Annotated
 
 from fastapi import APIRouter, File, Form, HTTPException, Request, UploadFile
@@ -15,10 +16,19 @@ async def restore_universal(request: Request, image: Annotated[UploadFile, File(
                             apply_corruption: Annotated[bool, Form()] = False,
                             corruption_type: Annotated[str | None, Form()] = None,
                             severity: Annotated[int, Form(ge=1, le=3)] = 2,
-                            seed: Annotated[int | None, Form()] = None) -> UniversalRestoreResponse:
+                            seed: Annotated[int | None, Form()] = None,
+                            pipeline: Annotated[str | None, Form()] = None) -> UniversalRestoreResponse:
     x = to_array(await read_upload(image))
     applied, corrupted = None, x
-    if apply_corruption:
+    if apply_corruption and pipeline:  # optional demo feature: several corruptions applied in sequence
+        try:
+            steps = json.loads(pipeline)
+            assert isinstance(steps, list) and 1 <= len(steps) <= 6
+            assert all(s["type"] in corruption.KINDS and int(s["severity"]) in (1, 2, 3) for s in steps)
+        except (ValueError, AssertionError, KeyError, TypeError):
+            raise HTTPException(422, "pipeline must be a JSON list of 1-6 {type, severity 1-3} steps")
+        corrupted, applied = corruption.apply_pipeline(x, steps, seed)
+    elif apply_corruption:
         if corruption_type not in corruption.KINDS:
             raise HTTPException(422, f"corruption_type must be one of {list(corruption.KINDS)}")
         corrupted, applied = corruption.apply(x, corruption_type, severity, seed)

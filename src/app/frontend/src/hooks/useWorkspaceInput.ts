@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { api, dataUrlToFile } from "../services/api";
-import type { AppliedCorruption, CorruptionKind } from "../types";
+import type { AppliedCorruption, CorruptionKind, PipelineStep } from "../types";
 
 export const SAMPLES = [1, 2, 3, 4, 5, 6].map((n) => `/samples/pet_${n}.jpg`);
 const MAX_MB = 10;
@@ -19,6 +19,8 @@ export function useWorkspaceInput() {
   const [kind, setKind] = useState<CorruptionKind>("gaussian_blur");
   const [severity, setSeverity] = useState(2);
   const [asIs, setAsIs] = useState(false);
+  const [multi, setMulti] = useState(false); // optional demo mode: several corruptions in sequence
+  const [steps, setSteps] = useState<PipelineStep[]>([{ id: 1, kind: "gaussian_blur", severity: 2 }]);
   const [problem, setProblem] = useState<string | null>(null);
 
   const pickSample = useCallback(async (url: string) => {
@@ -43,20 +45,32 @@ export function useWorkspaceInput() {
 
   const shuffle = useCallback(() => void pickSample(SAMPLES[Math.floor(Math.random() * SAMPLES.length)]), [pickSample]);
 
+  const addStep = useCallback(() => setSteps((s) => (s.length >= 6 ? s : [...s, { id: Math.max(0, ...s.map((x) => x.id)) + 1, kind: "salt_and_pepper", severity: 2 }])), []);
+  const removeStep = useCallback((id: number) => setSteps((s) => (s.length <= 1 ? s : s.filter((x) => x.id !== id))), []);
+  const updateStep = useCallback((id: number, patch: Partial<PipelineStep>) => setSteps((s) => s.map((x) => (x.id === id ? { ...x, ...patch } : x))), []);
+
+  /** Form fields that describe the corruption to apply (single, or the multi-step pipeline). */
+  const corruptionFields = useCallback((form: FormData) => {
+    form.append("apply_corruption", "true");
+    if (multi) form.append("pipeline", JSON.stringify(steps.map((s) => ({ type: s.kind, severity: s.severity }))));
+    else {
+      form.append("corruption_type", kind);
+      form.append("severity", String(severity));
+    }
+  }, [multi, steps, kind, severity]);
+
   /** Apply the chosen corruption server-side (unless the image is already corrupted) and return model input + reference. */
   const prepare = useCallback(async (): Promise<Prepared> => {
     if (!file) throw new Error("Choose a sample or upload an image first.");
     if (asIs) return { image: file, reference: null, applied: null };
     const form = new FormData();
     form.append("image", file);
-    form.append("apply_corruption", "true");
-    form.append("corruption_type", kind);
-    form.append("severity", String(severity));
+    corruptionFields(form);
     const r = await api.restoreUniversal(form);
-    return { image: dataUrlToFile(r.corrupted_image, `corrupted_${kind}_${severity}.png`), reference: file, applied: r.corruption_applied };
-  }, [file, asIs, kind, severity]);
+    return { image: dataUrlToFile(r.corrupted_image, multi ? "corrupted_pipeline.png" : `corrupted_${kind}_${severity}.png`), reference: file, applied: r.corruption_applied };
+  }, [file, asIs, multi, kind, severity, corruptionFields]);
 
-  return { file, sampleUrl, kind, severity, asIs, problem, setKind, setSeverity, setAsIs, pickSample, pickUpload, shuffle, prepare };
+  return { file, sampleUrl, kind, severity, asIs, multi, steps, setMulti, addStep, removeStep, updateStep, corruptionFields, problem, setKind, setSeverity, setAsIs, pickSample, pickUpload, shuffle, prepare };
 }
 
 export type WorkspaceInput = ReturnType<typeof useWorkspaceInput>;

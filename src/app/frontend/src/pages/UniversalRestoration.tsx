@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import CorruptionCard, { SEVERITY_PARAMS } from "../components/input/CorruptionCard";
+import CorruptionCard, { describeApplied } from "../components/input/CorruptionCard";
 import SampleCard from "../components/input/SampleCard";
 import DiagnosticsBar from "../components/ui/DiagnosticsBar";
 import ErrorHeatmapCard from "../components/ui/ErrorHeatmapCard";
@@ -27,17 +27,13 @@ export default function UniversalRestoration() {
     if (!input.file) return;
     const form = new FormData();
     form.append("image", input.file);
-    if (!input.asIs) {
-      form.append("apply_corruption", "true");
-      form.append("corruption_type", input.kind);
-      form.append("severity", String(input.severity));
-    }
+    if (!input.asIs) input.corruptionFields(form);
     void inf.run(form);
   };
 
   const r = inf.data;
   const c = r?.corruption_applied;
-  const label = c ? `Corrupted (${SEVERITY_PARAMS[input.kind][Number(c.severity) - 1]})` : r ? "Input (as uploaded)" : "Selected image";
+  const label = c ? `Corrupted (${describeApplied(c)})` : r ? "Input (as uploaded)" : "Selected image";
   return (
     <div className="flex flex-col w-full gap-space-lg pb-4">
       {inf.error && (

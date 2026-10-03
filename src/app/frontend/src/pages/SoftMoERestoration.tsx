@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import CorruptionCard, { SEVERITY_PARAMS } from "../components/input/CorruptionCard";
+import CorruptionCard, { describeApplied } from "../components/input/CorruptionCard";
 import SampleCard from "../components/input/SampleCard";
 import BlendCard from "../components/moe/BlendCard";
 import GatingCard from "../components/moe/GatingCard";
@@ -35,7 +35,7 @@ export default function SoftMoERestoration() {
   const run = () => void inf.run();
   const r = inf.data;
   const entropy = r ? -Object.values(r.routing_weights).reduce((a, p) => a + (p > 0 ? p * Math.log(p) : 0), 0) : null;
-  const badge = applied ? `${String(applied.type).replace(/_/g, " ")} · ${SEVERITY_PARAMS[applied.type as keyof typeof SEVERITY_PARAMS][Number(applied.severity) - 1]}` : r ? "uploaded as-is" : "no input yet";
+  const badge = applied ? describeApplied(applied, true) : r ? "uploaded as-is" : "no input yet";
   return (
     <div className="flex flex-col w-full gap-space-lg pb-6">
       <TopStatusBar

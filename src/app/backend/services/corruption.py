@@ -53,3 +53,12 @@ def apply(x: np.ndarray, kind: str, severity: int, seed: int | None = None) -> t
         return gaussian_blur(x, k, s), {"type": kind, "severity": severity, "kernel": k, "sigma": s}
     n, f = OCC_LEVELS[i]
     return occlusion(x, n, f, random.Random(seed)), {"type": kind, "severity": severity, "rectangles": n, "area_fraction": f}
+
+
+def apply_pipeline(x: np.ndarray, steps: list[dict], seed: int | None = None) -> tuple[np.ndarray, dict]:
+    """Optional demo feature: apply several corruptions one after another (each output feeds the next)."""
+    y, applied = x, []
+    for i, s in enumerate(steps):
+        y, info = apply(y, s["type"], int(s["severity"]), None if seed is None else seed + i)
+        applied.append(info)
+    return y, {"type": "pipeline", "severity": 0, "steps": applied}
