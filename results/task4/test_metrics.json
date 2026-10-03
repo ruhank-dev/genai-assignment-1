@@ -1,0 +1,34 @@
+{
+  "n_test": 1046,
+  "overall": {
+    "l1": 0.1001414880156517,
+    "ssim": 0.49834144115448,
+    "psnr": 16.137014389038086,
+    "lpips": 0.38176429271698
+  },
+  "fid_overall": 102.06168643928035,
+  "per_style": {
+    "style1": {
+      "n": 619,
+      "l1": 0.07502854615449905,
+      "ssim": 0.5455430150032043,
+      "psnr": 17.902835845947266,
+      "lpips": 0.4059534966945648
+    },
+    "style2": {
+      "n": 381,
+      "l1": 0.14562147855758667,
+      "ssim": 0.40574365854263306,
+      "psnr": 12.898184776306152,
+      "lpips": 0.3540424704551697
+    },
+    "style3": {
+      "n": 46,
+      "l1": 0.061381470412015915,
+      "ssim": 0.6301242709159851,
+      "psnr": 19.20111656188965,
+      "lpips": 0.2858707010746002
+    }
+  },
+  "notes": "FID uses 1046 images for a 2048-d feature covariance (rank-deficient): treat as a relative number; per-style FID is not reported because style 2/3 have only 381/46 test images."
+}

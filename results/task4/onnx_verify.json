@@ -1,0 +1,12 @@
+{
+  "path": "C:\\Users\\RUHAN\\Downloads\\gen-ai\\models\\onnx\\task4_generator.onnx",
+  "opset": 17,
+  "size_mb": 76.94,
+  "max_abs_err": {
+    "1": 8.642673492431641e-07,
+    "4": 1.1469237506389618e-06,
+    "8": 1.1469237506389618e-06
+  },
+  "pytorch_ms": 45.138,
+  "onnxruntime_ms": 20.096
+}

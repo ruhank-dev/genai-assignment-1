@@ -23,6 +23,8 @@ dependencies = [
   "uvicorn[standard]",
   "python-multipart",
   "gdown>=6.4.1",
+  "lpips>=0.1.4",
+  "pytorch-fid>=0.3.0",
 ]
 
 [dependency-groups]

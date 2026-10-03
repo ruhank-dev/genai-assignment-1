@@ -1,0 +1,16 @@
+{
+  "best_value": 0.0905950665473938,
+  "best_params": {
+    "g_lr": 0.0003920673972242139,
+    "d_lr": 0.0010508421338691768,
+    "batch_size": 16,
+    "base_channels": 64,
+    "dropout": 0.08526206184364576,
+    "style_embed_dim": 32,
+    "lambda_l1": 112.65466963346036
+  },
+  "best_trial": 2,
+  "n_trials": 10,
+  "n_complete": 6,
+  "n_pruned": 4
+}

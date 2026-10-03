@@ -1,0 +1,58 @@
+[
+  {
+    "test_idx": 512,
+    "style": 1,
+    "l1": 0.29795482754707336,
+    "ssim": 0.2522242069244385,
+    "lpips": 0.5627163648605347,
+    "anno": {
+      "gender": 1,
+      "hair": 0,
+      "earring": 1,
+      "smile": 0,
+      "frontal_face": 0
+    }
+  },
+  {
+    "test_idx": 246,
+    "style": 2,
+    "l1": 0.25592461228370667,
+    "ssim": 0.26776838302612305,
+    "lpips": 0.44758301973342896,
+    "anno": {
+      "gender": 1,
+      "hair": 0,
+      "earring": 0,
+      "smile": 0,
+      "frontal_face": 0
+    }
+  },
+  {
+    "test_idx": 221,
+    "style": 2,
+    "l1": 0.22886258363723755,
+    "ssim": 0.18364118039608002,
+    "lpips": 0.46307238936424255,
+    "anno": {
+      "gender": 1,
+      "hair": 0,
+      "earring": 1,
+      "smile": 0,
+      "frontal_face": 1
+    }
+  },
+  {
+    "test_idx": 66,
+    "style": 2,
+    "l1": 0.22694729268550873,
+    "ssim": 0.28093355894088745,
+    "lpips": 0.4180225133895874,
+    "anno": {
+      "gender": 0,
+      "hair": 0,
+      "earring": 1,
+      "smile": 1,
+      "frontal_face": 0
+    }
+  }
+]
