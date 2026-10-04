@@ -80,7 +80,7 @@ Checkpoints go to `checkpoints/` (git-ignored; not included — the ONNX exports
 ```bash
 uv run pytest -q                       # 41 tests: losses/metrics, corruptions, models, routers, MoE, GAN, ONNX, backend API
 python -m scripts.smoke_test http://localhost      # live stack: 15 end-to-end API checks
-python scripts/ui_test.py http://localhost         # browser test (10 steps) of the 4 workspaces (pip install playwright; playwright install chromium)
+python scripts/ui_test.py http://localhost         # browser test (11 steps) of the 4 workspaces (pip install playwright; playwright install chromium)
 ```
 
 ## 5. Results (real numbers from this repository's runs; details in `results/`)
