@@ -1,5 +1,7 @@
 /data/
 checkpoints/
+checkpoints.zip
+*.zip
 .env
 .env.local
 __pycache__/

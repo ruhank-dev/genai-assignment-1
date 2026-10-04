@@ -114,6 +114,7 @@ tests/ scripts/  unit & API tests; data download, smoke/UI tests    Dockerfile.*
 | Oxford-IIIT Pet (Tasks 1-3) | https://www.robots.ox.ac.uk/~vgg/data/pets/ (downloaded automatically by `python -m scripts.download_pets`) |
 | FS2K face-to-sketch (Task 4) | Google Drive archive https://drive.google.com/uc?id=1saIMhQ3dc5_ftkfGmBPbCluRn_zy7QQp (downloaded automatically by `python -m scripts.download_fs2k`) |
 | Datasets are **not** stored in this repository | they go to `data/` (git-ignored) |
+| Trained PyTorch checkpoints (`checkpoints/`, 3.6 GB, optional - the app only needs the ONNX models) | Google Drive: https://drive.google.com/file/d/1iNEaYxVuhcRkCcnlcEJkk_0QXOctJlX0/view?usp=sharing (`checkpoints.zip`; unzip into the repository root so the folders `checkpoints/task1..task4` exist) |
 | ONNX models used by the app | `models/onnx/` (in this repository, ~101 MB) |
 | MLflow experiment records | `mlflow.db` + `mlruns/` (in this repository). View with `uv run mlflow ui --backend-store-uri sqlite:///mlflow.db` -> http://localhost:5000. Runs, parameters and metric curves load anywhere; the artifact paths stored inside the database point at the original machine, but the artifact files themselves are in `mlruns/`. |
 | Optuna studies | `optuna/optuna_studies.db` (SQLite) and the trial tables in `results/*/*_trials.csv` |
