@@ -5,8 +5,6 @@ checkpoints/
 __pycache__/
 *.pyc
 runs/
-mlruns/
-mlflow.db
 wandb/
 node_modules/
 dist/
